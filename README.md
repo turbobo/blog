@@ -27,10 +27,11 @@
 *  JDK 12
 *  springboot 2.2.5
 
-** 运行：**
-*1.直接在数据库运行blog.sql生成数据库文件
-*2.在dev.xml或pro.xml中修改数据连接信息
-*3.在dev.xml或pro.xml中加入启动端口号  server: port: 8089
+**运行：**
+
+*  1.直接在数据库运行blog.sql生成数据库文件
+*  2.在dev.xml或pro.xml中修改数据连接信息
+*  3.在dev.xml或pro.xml中加入启动端口号  server: port: 8089
 
 
 
