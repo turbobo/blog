@@ -502,3 +502,808 @@ Identify and stop the process that's listening on port 8080 or configure this ap
 2020-06-02 15:50:35.270  INFO 9524 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
 2020-06-02 15:50:35.350  INFO 9524 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8883 (http) with context path ''
 2020-06-02 15:50:35.356  INFO 9524 --- [restartedMain] com.blog.BlogApplication                 : Started BlogApplication in 6.386 seconds (JVM running for 8.25)
+2020-06-02 15:50:50.175  INFO 7584 --- [restartedMain] com.blog.BlogApplication                 : Starting BlogApplication on DESKTOP-TB59BV9 with PID 7584 (D:\IdeaSpace\blog\target\classes started by admin in D:\IdeaSpace\blog)
+2020-06-02 15:50:50.182 DEBUG 7584 --- [restartedMain] com.blog.BlogApplication                 : Running with Spring Boot v2.2.5.RELEASE, Spring v5.2.4.RELEASE
+2020-06-02 15:50:50.183  INFO 7584 --- [restartedMain] com.blog.BlogApplication                 : The following profiles are active: dev
+2020-06-02 15:50:50.292  INFO 7584 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-06-02 15:50:50.293  INFO 7584 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-06-02 15:50:52.751  INFO 7584 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8089 (http)
+2020-06-02 15:50:52.764  INFO 7584 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-06-02 15:50:52.765  INFO 7584 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.31]
+2020-06-02 15:50:52.934  INFO 7584 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-06-02 15:50:52.934  INFO 7584 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 2641 ms
+2020-06-02 15:50:54.092  INFO 7584 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-06-02 15:50:54.252  INFO 7584 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2020-06-02 15:50:54.811  INFO 7584 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2020-06-02 15:50:54.884  INFO 7584 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8089 (http) with context path ''
+2020-06-02 15:50:54.889  INFO 7584 --- [restartedMain] com.blog.BlogApplication                 : Started BlogApplication in 5.785 seconds (JVM running for 7.619)
+2020-06-02 15:51:49.265  INFO 7584 --- [http-nio-8089-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-06-02 15:51:49.265  INFO 7584 --- [http-nio-8089-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-06-02 15:51:49.289  INFO 7584 --- [http-nio-8089-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 23 ms
+2020-06-02 15:51:49.336  INFO 7584 --- [http-nio-8089-exec-1] com.blog.aspect.LogAspect                : Request: LogAspect.RequestLog(url=http://localhost:8089/, ip=0:0:0:0:0:0:0:1, classMethod=com.blog.controller.IndexController.toIndex, args=[1, {}])
+2020-06-02 15:51:49.414  INFO 7584 --- [http-nio-8089-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-06-02 15:51:49.622  INFO 7584 --- [http-nio-8089-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-06-02 15:51:49.633 DEBUG 7584 --- [http-nio-8089-exec-1] com.blog.dao.BlogDao.getIndexBlog_COUNT  : ==>  Preparing: SELECT count(0) FROM t_blog b, t_type t, t_user u WHERE b.type_id = t.id AND u.id = b.user_id 
+2020-06-02 15:51:49.667 DEBUG 7584 --- [http-nio-8089-exec-1] com.blog.dao.BlogDao.getIndexBlog_COUNT  : ==> Parameters: 
+2020-06-02 15:51:49.707 DEBUG 7584 --- [http-nio-8089-exec-1] com.blog.dao.BlogDao.getIndexBlog_COUNT  : <==      Total: 1
+2020-06-02 15:51:49.714 DEBUG 7584 --- [http-nio-8089-exec-1] com.blog.dao.BlogDao.getIndexBlog        : ==>  Preparing: /*主页博客展示*/ select b.id, b.title, b.first_picture, b.views, b.update_time, b.description, t.name typename, t.id typeid, u.nickname, u.avatar from t_blog b, t_type t, t_user u where b.type_id = t.id and u.id = b.user_id order by b.update_time desc LIMIT ? 
+2020-06-02 15:51:49.715 DEBUG 7584 --- [http-nio-8089-exec-1] com.blog.dao.BlogDao.getIndexBlog        : ==> Parameters: 8(Integer)
+2020-06-02 15:51:49.774 DEBUG 7584 --- [http-nio-8089-exec-1] com.blog.dao.BlogDao.getIndexBlog        : <==      Total: 8
+2020-06-02 15:51:49.786 DEBUG 7584 --- [http-nio-8089-exec-1] com.blog.dao.TypeDao.getBlogType         : ==>  Preparing: select t.id tid, t.name, b.id bid, b.title, b.type_id from t_type t, t_blog b where t.id = b.type_id 
+2020-06-02 15:51:49.786 DEBUG 7584 --- [http-nio-8089-exec-1] com.blog.dao.TypeDao.getBlogType         : ==> Parameters: 
+2020-06-02 15:51:49.793 DEBUG 7584 --- [http-nio-8089-exec-1] com.blog.dao.TypeDao.getBlogType         : <==      Total: 8
+2020-06-02 15:51:49.794 DEBUG 7584 --- [http-nio-8089-exec-1] com.blog.dao.TagDao.getBlogTag           : ==>  Preparing: select t.id tid, t.name, b.id bid, b.title from t_tag t, t_blog b, t_blog_tags bt where t.id = bt.tag_id and b.id = bt.blog_id 
+2020-06-02 15:51:49.794 DEBUG 7584 --- [http-nio-8089-exec-1] com.blog.dao.TagDao.getBlogTag           : ==> Parameters: 
+2020-06-02 15:51:49.800 DEBUG 7584 --- [http-nio-8089-exec-1] com.blog.dao.TagDao.getBlogTag           : <==      Total: 12
+2020-06-02 15:51:49.801 DEBUG 7584 --- [http-nio-8089-exec-1] c.blog.dao.BlogDao.getAllRecommendBlog   : ==>  Preparing: select id, title, recommend from t_blog order by update_time desc; 
+2020-06-02 15:51:49.801 DEBUG 7584 --- [http-nio-8089-exec-1] c.blog.dao.BlogDao.getAllRecommendBlog   : ==> Parameters: 
+2020-06-02 15:51:49.807 DEBUG 7584 --- [http-nio-8089-exec-1] c.blog.dao.BlogDao.getAllRecommendBlog   : <==      Total: 8
+2020-06-02 15:51:49.809  INFO 7584 --- [http-nio-8089-exec-1] com.blog.aspect.LogAspect                : ------------doAfter------------
+2020-06-02 15:51:49.809  INFO 7584 --- [http-nio-8089-exec-1] com.blog.aspect.LogAspect                : Result: index
+2020-06-02 16:41:23.985  INFO 11008 --- [restartedMain] com.blog.BlogApplication                 : Starting BlogApplication on DESKTOP-TB59BV9 with PID 11008 (D:\IdeaSpace\blog\target\classes started by admin in D:\IdeaSpace\blog)
+2020-06-02 16:41:23.991 DEBUG 11008 --- [restartedMain] com.blog.BlogApplication                 : Running with Spring Boot v2.2.5.RELEASE, Spring v5.2.4.RELEASE
+2020-06-02 16:41:23.991  INFO 11008 --- [restartedMain] com.blog.BlogApplication                 : The following profiles are active: dev
+2020-06-02 16:41:24.122  INFO 11008 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-06-02 16:41:24.123  INFO 11008 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-06-02 16:41:27.785  INFO 11008 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8089 (http)
+2020-06-02 16:41:27.799  INFO 11008 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-06-02 16:41:27.800  INFO 11008 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.31]
+2020-06-02 16:41:28.001  INFO 11008 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-06-02 16:41:28.001  INFO 11008 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 3878 ms
+2020-06-02 16:41:29.801  INFO 11008 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-06-02 16:41:29.983  INFO 11008 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2020-06-02 16:41:30.652  WARN 11008 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : Unable to start LiveReload server
+2020-06-02 16:41:30.734  INFO 11008 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8089 (http) with context path ''
+2020-06-02 16:41:30.739  INFO 11008 --- [restartedMain] com.blog.BlogApplication                 : Started BlogApplication in 7.898 seconds (JVM running for 10.204)
+2020-06-02 16:41:30.887  INFO 11008 --- [http-nio-8089-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-06-02 16:41:30.887  INFO 11008 --- [http-nio-8089-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-06-02 16:41:30.911  INFO 11008 --- [http-nio-8089-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 23 ms
+2020-06-02 16:41:30.988  INFO 11008 --- [http-nio-8089-exec-1] com.blog.aspect.LogAspect                : Request: LogAspect.RequestLog(url=http://localhost:8089/, ip=0:0:0:0:0:0:0:1, classMethod=com.blog.controller.IndexController.toIndex, args=[1, {}])
+2020-06-02 16:41:30.988  INFO 11008 --- [http-nio-8089-exec-2] com.blog.aspect.LogAspect                : Request: LogAspect.RequestLog(url=http://localhost:8089/, ip=127.0.0.1, classMethod=com.blog.controller.IndexController.toIndex, args=[1, {}])
+2020-06-02 16:41:31.105  INFO 11008 --- [http-nio-8089-exec-2] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-06-02 16:41:31.428  INFO 11008 --- [http-nio-8089-exec-2] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-06-02 16:41:31.447 DEBUG 11008 --- [http-nio-8089-exec-2] com.blog.dao.BlogDao.getIndexBlog_COUNT  : ==>  Preparing: SELECT count(0) FROM t_blog b, t_type t, t_user u WHERE b.type_id = t.id AND u.id = b.user_id 
+2020-06-02 16:41:31.447 DEBUG 11008 --- [http-nio-8089-exec-1] com.blog.dao.BlogDao.getIndexBlog_COUNT  : ==>  Preparing: SELECT count(0) FROM t_blog b, t_type t, t_user u WHERE b.type_id = t.id AND u.id = b.user_id 
+2020-06-02 16:41:31.493 DEBUG 11008 --- [http-nio-8089-exec-2] com.blog.dao.BlogDao.getIndexBlog_COUNT  : ==> Parameters: 
+2020-06-02 16:41:31.493 DEBUG 11008 --- [http-nio-8089-exec-1] com.blog.dao.BlogDao.getIndexBlog_COUNT  : ==> Parameters: 
+2020-06-02 16:41:31.698 DEBUG 11008 --- [http-nio-8089-exec-2] com.blog.dao.BlogDao.getIndexBlog_COUNT  : <==      Total: 1
+2020-06-02 16:41:31.703 DEBUG 11008 --- [http-nio-8089-exec-1] com.blog.dao.BlogDao.getIndexBlog_COUNT  : <==      Total: 1
+2020-06-02 16:41:31.713 DEBUG 11008 --- [http-nio-8089-exec-2] com.blog.dao.BlogDao.getIndexBlog        : ==>  Preparing: /*主页博客展示*/ select b.id, b.title, b.first_picture, b.views, b.update_time, b.description, t.name typename, t.id typeid, u.nickname, u.avatar from t_blog b, t_type t, t_user u where b.type_id = t.id and u.id = b.user_id order by b.update_time desc LIMIT ? 
+2020-06-02 16:41:31.715 DEBUG 11008 --- [http-nio-8089-exec-2] com.blog.dao.BlogDao.getIndexBlog        : ==> Parameters: 8(Integer)
+2020-06-02 16:41:31.722 DEBUG 11008 --- [http-nio-8089-exec-1] com.blog.dao.BlogDao.getIndexBlog        : ==>  Preparing: /*主页博客展示*/ select b.id, b.title, b.first_picture, b.views, b.update_time, b.description, t.name typename, t.id typeid, u.nickname, u.avatar from t_blog b, t_type t, t_user u where b.type_id = t.id and u.id = b.user_id order by b.update_time desc LIMIT ? 
+2020-06-02 16:41:31.724 DEBUG 11008 --- [http-nio-8089-exec-1] com.blog.dao.BlogDao.getIndexBlog        : ==> Parameters: 8(Integer)
+2020-06-02 16:41:31.824 DEBUG 11008 --- [http-nio-8089-exec-2] com.blog.dao.BlogDao.getIndexBlog        : <==      Total: 8
+2020-06-02 16:41:31.837 DEBUG 11008 --- [http-nio-8089-exec-2] com.blog.dao.TypeDao.getBlogType         : ==>  Preparing: select t.id tid, t.name, b.id bid, b.title, b.type_id from t_type t, t_blog b where t.id = b.type_id 
+2020-06-02 16:41:31.838 DEBUG 11008 --- [http-nio-8089-exec-2] com.blog.dao.TypeDao.getBlogType         : ==> Parameters: 
+2020-06-02 16:41:31.848 DEBUG 11008 --- [http-nio-8089-exec-2] com.blog.dao.TypeDao.getBlogType         : <==      Total: 8
+2020-06-02 16:41:31.850 DEBUG 11008 --- [http-nio-8089-exec-2] com.blog.dao.TagDao.getBlogTag           : ==>  Preparing: select t.id tid, t.name, b.id bid, b.title from t_tag t, t_blog b, t_blog_tags bt where t.id = bt.tag_id and b.id = bt.blog_id 
+2020-06-02 16:41:31.850 DEBUG 11008 --- [http-nio-8089-exec-2] com.blog.dao.TagDao.getBlogTag           : ==> Parameters: 
+2020-06-02 16:41:31.858 DEBUG 11008 --- [http-nio-8089-exec-2] com.blog.dao.TagDao.getBlogTag           : <==      Total: 12
+2020-06-02 16:41:31.859 DEBUG 11008 --- [http-nio-8089-exec-2] c.blog.dao.BlogDao.getAllRecommendBlog   : ==>  Preparing: select id, title, recommend from t_blog order by update_time desc; 
+2020-06-02 16:41:31.860 DEBUG 11008 --- [http-nio-8089-exec-2] c.blog.dao.BlogDao.getAllRecommendBlog   : ==> Parameters: 
+2020-06-02 16:41:31.868 DEBUG 11008 --- [http-nio-8089-exec-2] c.blog.dao.BlogDao.getAllRecommendBlog   : <==      Total: 8
+2020-06-02 16:41:31.872  INFO 11008 --- [http-nio-8089-exec-2] com.blog.aspect.LogAspect                : ------------doAfter------------
+2020-06-02 16:41:31.873  INFO 11008 --- [http-nio-8089-exec-2] com.blog.aspect.LogAspect                : Result: index
+2020-06-02 16:41:31.884 DEBUG 11008 --- [http-nio-8089-exec-1] com.blog.dao.BlogDao.getIndexBlog        : <==      Total: 8
+2020-06-02 16:41:31.885 DEBUG 11008 --- [http-nio-8089-exec-1] com.blog.dao.TypeDao.getBlogType         : ==>  Preparing: select t.id tid, t.name, b.id bid, b.title, b.type_id from t_type t, t_blog b where t.id = b.type_id 
+2020-06-02 16:41:31.886 DEBUG 11008 --- [http-nio-8089-exec-1] com.blog.dao.TypeDao.getBlogType         : ==> Parameters: 
+2020-06-02 16:41:31.891 DEBUG 11008 --- [http-nio-8089-exec-1] com.blog.dao.TypeDao.getBlogType         : <==      Total: 8
+2020-06-02 16:41:31.892 DEBUG 11008 --- [http-nio-8089-exec-1] com.blog.dao.TagDao.getBlogTag           : ==>  Preparing: select t.id tid, t.name, b.id bid, b.title from t_tag t, t_blog b, t_blog_tags bt where t.id = bt.tag_id and b.id = bt.blog_id 
+2020-06-02 16:41:31.893 DEBUG 11008 --- [http-nio-8089-exec-1] com.blog.dao.TagDao.getBlogTag           : ==> Parameters: 
+2020-06-02 16:41:31.898 DEBUG 11008 --- [http-nio-8089-exec-1] com.blog.dao.TagDao.getBlogTag           : <==      Total: 12
+2020-06-02 16:41:31.900 DEBUG 11008 --- [http-nio-8089-exec-1] c.blog.dao.BlogDao.getAllRecommendBlog   : ==>  Preparing: select id, title, recommend from t_blog order by update_time desc; 
+2020-06-02 16:41:31.900 DEBUG 11008 --- [http-nio-8089-exec-1] c.blog.dao.BlogDao.getAllRecommendBlog   : ==> Parameters: 
+2020-06-02 16:41:31.912 DEBUG 11008 --- [http-nio-8089-exec-1] c.blog.dao.BlogDao.getAllRecommendBlog   : <==      Total: 8
+2020-06-02 16:41:31.913  INFO 11008 --- [http-nio-8089-exec-1] com.blog.aspect.LogAspect                : ------------doAfter------------
+2020-06-02 16:41:31.915  INFO 11008 --- [http-nio-8089-exec-1] com.blog.aspect.LogAspect                : Result: index
+2020-06-02 16:41:46.267  INFO 11008 --- [http-nio-8089-exec-6] com.blog.aspect.LogAspect                : Request: LogAspect.RequestLog(url=http://localhost:8089/about, ip=127.0.0.1, classMethod=com.blog.controller.AboutShowController.about, args=[])
+2020-06-02 16:41:46.279  INFO 11008 --- [http-nio-8089-exec-6] com.blog.aspect.LogAspect                : ------------doAfter------------
+2020-06-02 16:41:46.279  INFO 11008 --- [http-nio-8089-exec-6] com.blog.aspect.LogAspect                : Result: about
+2020-06-02 16:41:57.613  INFO 11008 --- [http-nio-8089-exec-2] com.blog.aspect.LogAspect                : Request: LogAspect.RequestLog(url=http://localhost:8089/blog/3, ip=0:0:0:0:0:0:0:1, classMethod=com.blog.controller.IndexController.toLogin, args=[3, {}])
+2020-06-02 16:41:57.618 DEBUG 11008 --- [http-nio-8089-exec-2] com.blog.dao.BlogDao.getDetailedBlog     : ==>  Preparing: /*博客详情*/ select b.id, b.first_picture, b.flag, b.title, b.content, b.views, b.update_time,b.commentabled, b.share_statement, b.appreciation, u.nickname, u.avatar, tag.id tagid, tag.name tagname from t_blog b, t_user u, t_tag tag, t_blog_tags tb where b.user_id = u.id and tb.blog_id = b.id and tb.tag_id = tag.id and b.id = ? 
+2020-06-02 16:41:57.619 DEBUG 11008 --- [http-nio-8089-exec-2] com.blog.dao.BlogDao.getDetailedBlog     : ==> Parameters: 3(Long)
+2020-06-02 16:41:57.623 DEBUG 11008 --- [http-nio-8089-exec-2] com.blog.dao.BlogDao.getDetailedBlog     : <==      Total: 4
+2020-06-02 16:41:57.715  INFO 11008 --- [http-nio-8089-exec-2] com.blog.aspect.LogAspect                : ------------doAfter------------
+2020-06-02 16:41:57.715  INFO 11008 --- [http-nio-8089-exec-2] com.blog.aspect.LogAspect                : Result: blog
+2020-06-02 16:41:59.420  INFO 11008 --- [http-nio-8089-exec-3] com.blog.aspect.LogAspect                : Request: LogAspect.RequestLog(url=http://localhost:8089/comments/3, ip=0:0:0:0:0:0:0:1, classMethod=com.blog.controller.CommentController.comments, args=[3, {}])
+2020-06-02 16:41:59.436 DEBUG 11008 --- [http-nio-8089-exec-3] c.b.d.C.findByBlogIdAndParentCommentNull : ==>  Preparing: select c.id cid,c.nickname,c.email,c.content,c.avatar, c.create_time,c.blog_id,c.parent_comment_id from t_comment c, t_blog b where c.blog_id = b.id and c.blog_id = ? and c.parent_comment_id = ? order by c.create_time desc 
+2020-06-02 16:41:59.437 DEBUG 11008 --- [http-nio-8089-exec-3] c.b.d.C.findByBlogIdAndParentCommentNull : ==> Parameters: 3(Long), -1(Long)
+2020-06-02 16:41:59.441 DEBUG 11008 --- [http-nio-8089-exec-3] c.b.d.C.findByBlogIdAndParentCommentNull : <==      Total: 1
+2020-06-02 16:41:59.445 DEBUG 11008 --- [http-nio-8089-exec-3] com.blog.dao.BlogDao.getDetailedBlog     : ==>  Preparing: /*博客详情*/ select b.id, b.first_picture, b.flag, b.title, b.content, b.views, b.update_time,b.commentabled, b.share_statement, b.appreciation, u.nickname, u.avatar, tag.id tagid, tag.name tagname from t_blog b, t_user u, t_tag tag, t_blog_tags tb where b.user_id = u.id and tb.blog_id = b.id and tb.tag_id = tag.id and b.id = ? 
+2020-06-02 16:41:59.447 DEBUG 11008 --- [http-nio-8089-exec-3] com.blog.dao.BlogDao.getDetailedBlog     : ==> Parameters: 3(Long)
+2020-06-02 16:41:59.454 DEBUG 11008 --- [http-nio-8089-exec-3] com.blog.dao.BlogDao.getDetailedBlog     : <==      Total: 4
+2020-06-02 16:41:59.463  INFO 11008 --- [http-nio-8089-exec-3] com.blog.aspect.LogAspect                : ------------doAfter------------
+2020-06-02 16:41:59.463  INFO 11008 --- [http-nio-8089-exec-3] com.blog.aspect.LogAspect                : Result: blog :: commentList
+2020-06-02 16:43:18.132  INFO 11008 --- [http-nio-8089-exec-4] com.blog.aspect.LogAspect                : Request: LogAspect.RequestLog(url=http://localhost:8089/blog/11, ip=0:0:0:0:0:0:0:1, classMethod=com.blog.controller.IndexController.toLogin, args=[11, {}])
+2020-06-02 16:43:18.136 DEBUG 11008 --- [http-nio-8089-exec-4] com.blog.dao.BlogDao.getDetailedBlog     : ==>  Preparing: /*博客详情*/ select b.id, b.first_picture, b.flag, b.title, b.content, b.views, b.update_time,b.commentabled, b.share_statement, b.appreciation, u.nickname, u.avatar, tag.id tagid, tag.name tagname from t_blog b, t_user u, t_tag tag, t_blog_tags tb where b.user_id = u.id and tb.blog_id = b.id and tb.tag_id = tag.id and b.id = ? 
+2020-06-02 16:43:18.137 DEBUG 11008 --- [http-nio-8089-exec-4] com.blog.dao.BlogDao.getDetailedBlog     : ==> Parameters: 11(Long)
+2020-06-02 16:43:18.144 DEBUG 11008 --- [http-nio-8089-exec-4] com.blog.dao.BlogDao.getDetailedBlog     : <==      Total: 1
+2020-06-02 16:43:18.148  INFO 11008 --- [http-nio-8089-exec-4] com.blog.aspect.LogAspect                : ------------doAfter------------
+2020-06-02 16:43:18.149  INFO 11008 --- [http-nio-8089-exec-4] com.blog.aspect.LogAspect                : Result: blog
+2020-06-02 16:43:19.503  INFO 11008 --- [http-nio-8089-exec-7] com.blog.aspect.LogAspect                : Request: LogAspect.RequestLog(url=http://localhost:8089/comments/11, ip=0:0:0:0:0:0:0:1, classMethod=com.blog.controller.CommentController.comments, args=[11, {}])
+2020-06-02 16:43:19.505 DEBUG 11008 --- [http-nio-8089-exec-7] c.b.d.C.findByBlogIdAndParentCommentNull : ==>  Preparing: select c.id cid,c.nickname,c.email,c.content,c.avatar, c.create_time,c.blog_id,c.parent_comment_id from t_comment c, t_blog b where c.blog_id = b.id and c.blog_id = ? and c.parent_comment_id = ? order by c.create_time desc 
+2020-06-02 16:43:19.506 DEBUG 11008 --- [http-nio-8089-exec-7] c.b.d.C.findByBlogIdAndParentCommentNull : ==> Parameters: 11(Long), -1(Long)
+2020-06-02 16:43:19.509 DEBUG 11008 --- [http-nio-8089-exec-7] c.b.d.C.findByBlogIdAndParentCommentNull : <==      Total: 1
+2020-06-02 16:43:19.511 DEBUG 11008 --- [http-nio-8089-exec-7] com.blog.dao.BlogDao.getDetailedBlog     : ==>  Preparing: /*博客详情*/ select b.id, b.first_picture, b.flag, b.title, b.content, b.views, b.update_time,b.commentabled, b.share_statement, b.appreciation, u.nickname, u.avatar, tag.id tagid, tag.name tagname from t_blog b, t_user u, t_tag tag, t_blog_tags tb where b.user_id = u.id and tb.blog_id = b.id and tb.tag_id = tag.id and b.id = ? 
+2020-06-02 16:43:19.512 DEBUG 11008 --- [http-nio-8089-exec-7] com.blog.dao.BlogDao.getDetailedBlog     : ==> Parameters: 11(Long)
+2020-06-02 16:43:19.517 DEBUG 11008 --- [http-nio-8089-exec-7] com.blog.dao.BlogDao.getDetailedBlog     : <==      Total: 1
+2020-06-02 16:43:19.527  INFO 11008 --- [http-nio-8089-exec-7] com.blog.aspect.LogAspect                : ------------doAfter------------
+2020-06-02 16:43:19.528  INFO 11008 --- [http-nio-8089-exec-7] com.blog.aspect.LogAspect                : Result: blog :: commentList
+2020-06-02 16:43:43.139  INFO 11008 --- [http-nio-8089-exec-5] com.blog.aspect.LogAspect                : Request: LogAspect.RequestLog(url=http://localhost:8089/types/-1, ip=0:0:0:0:0:0:0:1, classMethod=com.blog.controller.TypeShowController.types, args=[-1, 1, {}])
+2020-06-02 16:43:43.149 DEBUG 11008 --- [http-nio-8089-exec-5] com.blog.dao.TypeDao.getBlogType_COUNT   : ==>  Preparing: SELECT count(0) FROM t_type t, t_blog b WHERE t.id = b.type_id 
+2020-06-02 16:43:43.150 DEBUG 11008 --- [http-nio-8089-exec-5] com.blog.dao.TypeDao.getBlogType_COUNT   : ==> Parameters: 
+2020-06-02 16:43:43.152 DEBUG 11008 --- [http-nio-8089-exec-5] com.blog.dao.TypeDao.getBlogType_COUNT   : <==      Total: 1
+2020-06-02 16:43:43.152 DEBUG 11008 --- [http-nio-8089-exec-5] com.blog.dao.TypeDao.getBlogType         : ==>  Preparing: select t.id tid, t.name, b.id bid, b.title, b.type_id from t_type t, t_blog b where t.id = b.type_id LIMIT ? 
+2020-06-02 16:43:43.153 DEBUG 11008 --- [http-nio-8089-exec-5] com.blog.dao.TypeDao.getBlogType         : ==> Parameters: 100(Integer)
+2020-06-02 16:43:43.155 DEBUG 11008 --- [http-nio-8089-exec-5] com.blog.dao.TypeDao.getBlogType         : <==      Total: 8
+2020-06-02 16:43:43.161 DEBUG 11008 --- [http-nio-8089-exec-5] com.blog.dao.BlogDao.getByTypeId         : ==>  Preparing: select b.id, b.title, b.first_picture, b.views, b.update_time, b.description, t.name typename, t.id typeid, u.nickname, u.avatar from t_blog b, t_type t, t_user u where b.type_id = t.id and u.id = b.user_id and b.type_id = ? order by b.update_time desc 
+2020-06-02 16:43:43.162 DEBUG 11008 --- [http-nio-8089-exec-5] com.blog.dao.BlogDao.getByTypeId         : ==> Parameters: 1(Long)
+2020-06-02 16:43:43.195 DEBUG 11008 --- [http-nio-8089-exec-5] com.blog.dao.BlogDao.getByTypeId         : <==      Total: 3
+2020-06-02 16:43:43.196  INFO 11008 --- [http-nio-8089-exec-5] com.blog.aspect.LogAspect                : ------------doAfter------------
+2020-06-02 16:43:43.197  INFO 11008 --- [http-nio-8089-exec-5] com.blog.aspect.LogAspect                : Result: types
+2020-06-02 16:43:44.069  INFO 11008 --- [http-nio-8089-exec-8] com.blog.aspect.LogAspect                : Request: LogAspect.RequestLog(url=http://localhost:8089/archives, ip=0:0:0:0:0:0:0:1, classMethod=com.blog.controller.ArchiveShowController.archives, args=[{}])
+2020-06-02 16:43:44.080 DEBUG 11008 --- [http-nio-8089-exec-8] com.blog.dao.BlogDao.findGroupYear       : ==>  Preparing: select DATE_FORMAT(b.update_time, '%Y') from t_blog b order by b.update_time desc 
+2020-06-02 16:43:44.081 DEBUG 11008 --- [http-nio-8089-exec-8] com.blog.dao.BlogDao.findGroupYear       : ==> Parameters: 
+2020-06-02 16:43:44.083 DEBUG 11008 --- [http-nio-8089-exec-8] com.blog.dao.BlogDao.findGroupYear       : <==      Total: 8
+2020-06-02 16:43:44.086 DEBUG 11008 --- [http-nio-8089-exec-8] com.blog.dao.BlogDao.findByYear          : ==>  Preparing: select b.title, b.update_time, b.id, b.flag from t_blog b where DATE_FORMAT(b.update_time, "%Y") = ? 
+2020-06-02 16:43:44.088 DEBUG 11008 --- [http-nio-8089-exec-8] com.blog.dao.BlogDao.findByYear          : ==> Parameters: 2019(String)
+2020-06-02 16:43:44.093 DEBUG 11008 --- [http-nio-8089-exec-8] com.blog.dao.BlogDao.findByYear          : <==      Total: 1
+2020-06-02 16:43:44.095 DEBUG 11008 --- [http-nio-8089-exec-8] com.blog.dao.BlogDao.findByYear          : ==>  Preparing: select b.title, b.update_time, b.id, b.flag from t_blog b where DATE_FORMAT(b.update_time, "%Y") = ? 
+2020-06-02 16:43:44.095 DEBUG 11008 --- [http-nio-8089-exec-8] com.blog.dao.BlogDao.findByYear          : ==> Parameters: 2020(String)
+2020-06-02 16:43:44.099 DEBUG 11008 --- [http-nio-8089-exec-8] com.blog.dao.BlogDao.findByYear          : <==      Total: 7
+2020-06-02 16:43:44.101 DEBUG 11008 --- [http-nio-8089-exec-8] com.blog.dao.BlogDao.getAllBlog          : ==>  Preparing: /*后台博客展示*/ select b.id, b.title, b.update_time, b.recommend, b.type_id, b.published, t.id typeid, t.name typename from t_blog b, t_type t where b.type_id = t.id /*博客类型id=类型id*/ 
+2020-06-02 16:43:44.102 DEBUG 11008 --- [http-nio-8089-exec-8] com.blog.dao.BlogDao.getAllBlog          : ==> Parameters: 
+2020-06-02 16:43:44.110 DEBUG 11008 --- [http-nio-8089-exec-8] com.blog.dao.BlogDao.getAllBlog          : <==      Total: 8
+2020-06-02 16:43:44.111  INFO 11008 --- [http-nio-8089-exec-8] com.blog.aspect.LogAspect                : ------------doAfter------------
+2020-06-02 16:43:44.111  INFO 11008 --- [http-nio-8089-exec-8] com.blog.aspect.LogAspect                : Result: archives
+2020-06-02 16:43:46.040  INFO 11008 --- [http-nio-8089-exec-9] com.blog.aspect.LogAspect                : Request: LogAspect.RequestLog(url=http://localhost:8089/about, ip=0:0:0:0:0:0:0:1, classMethod=com.blog.controller.AboutShowController.about, args=[])
+2020-06-02 16:43:46.042  INFO 11008 --- [http-nio-8089-exec-9] com.blog.aspect.LogAspect                : ------------doAfter------------
+2020-06-02 16:43:46.042  INFO 11008 --- [http-nio-8089-exec-9] com.blog.aspect.LogAspect                : Result: about
+2020-06-02 16:43:50.981  INFO 11008 --- [http-nio-8089-exec-10] com.blog.aspect.LogAspect                : Request: LogAspect.RequestLog(url=http://localhost:8089/, ip=0:0:0:0:0:0:0:1, classMethod=com.blog.controller.IndexController.toIndex, args=[1, {}])
+2020-06-02 16:43:50.989 DEBUG 11008 --- [http-nio-8089-exec-10] com.blog.dao.BlogDao.getIndexBlog_COUNT  : ==>  Preparing: SELECT count(0) FROM t_blog b, t_type t, t_user u WHERE b.type_id = t.id AND u.id = b.user_id 
+2020-06-02 16:43:50.990 DEBUG 11008 --- [http-nio-8089-exec-10] com.blog.dao.BlogDao.getIndexBlog_COUNT  : ==> Parameters: 
+2020-06-02 16:43:50.993 DEBUG 11008 --- [http-nio-8089-exec-10] com.blog.dao.BlogDao.getIndexBlog_COUNT  : <==      Total: 1
+2020-06-02 16:43:50.994 DEBUG 11008 --- [http-nio-8089-exec-10] com.blog.dao.BlogDao.getIndexBlog        : ==>  Preparing: /*主页博客展示*/ select b.id, b.title, b.first_picture, b.views, b.update_time, b.description, t.name typename, t.id typeid, u.nickname, u.avatar from t_blog b, t_type t, t_user u where b.type_id = t.id and u.id = b.user_id order by b.update_time desc LIMIT ? 
+2020-06-02 16:43:50.994 DEBUG 11008 --- [http-nio-8089-exec-10] com.blog.dao.BlogDao.getIndexBlog        : ==> Parameters: 8(Integer)
+2020-06-02 16:43:51.036 DEBUG 11008 --- [http-nio-8089-exec-10] com.blog.dao.BlogDao.getIndexBlog        : <==      Total: 8
+2020-06-02 16:43:51.037 DEBUG 11008 --- [http-nio-8089-exec-10] com.blog.dao.TypeDao.getBlogType         : ==>  Preparing: select t.id tid, t.name, b.id bid, b.title, b.type_id from t_type t, t_blog b where t.id = b.type_id 
+2020-06-02 16:43:51.038 DEBUG 11008 --- [http-nio-8089-exec-10] com.blog.dao.TypeDao.getBlogType         : ==> Parameters: 
+2020-06-02 16:43:51.040 DEBUG 11008 --- [http-nio-8089-exec-10] com.blog.dao.TypeDao.getBlogType         : <==      Total: 8
+2020-06-02 16:43:51.043 DEBUG 11008 --- [http-nio-8089-exec-10] com.blog.dao.TagDao.getBlogTag           : ==>  Preparing: select t.id tid, t.name, b.id bid, b.title from t_tag t, t_blog b, t_blog_tags bt where t.id = bt.tag_id and b.id = bt.blog_id 
+2020-06-02 16:43:51.043 DEBUG 11008 --- [http-nio-8089-exec-10] com.blog.dao.TagDao.getBlogTag           : ==> Parameters: 
+2020-06-02 16:43:51.046 DEBUG 11008 --- [http-nio-8089-exec-10] com.blog.dao.TagDao.getBlogTag           : <==      Total: 12
+2020-06-02 16:43:51.048 DEBUG 11008 --- [http-nio-8089-exec-10] c.blog.dao.BlogDao.getAllRecommendBlog   : ==>  Preparing: select id, title, recommend from t_blog order by update_time desc; 
+2020-06-02 16:43:51.048 DEBUG 11008 --- [http-nio-8089-exec-10] c.blog.dao.BlogDao.getAllRecommendBlog   : ==> Parameters: 
+2020-06-02 16:43:51.050 DEBUG 11008 --- [http-nio-8089-exec-10] c.blog.dao.BlogDao.getAllRecommendBlog   : <==      Total: 8
+2020-06-02 16:43:51.051  INFO 11008 --- [http-nio-8089-exec-10] com.blog.aspect.LogAspect                : ------------doAfter------------
+2020-06-02 16:43:51.051  INFO 11008 --- [http-nio-8089-exec-10] com.blog.aspect.LogAspect                : Result: index
+2020-06-02 16:44:16.783 DEBUG 11008 --- [http-nio-8089-exec-9] c.b.d.U.queryByUsernameAndPassword       : ==>  Preparing: select * from blog.t_user where username = ? and password = ?; 
+2020-06-02 16:44:16.784 DEBUG 11008 --- [http-nio-8089-exec-9] c.b.d.U.queryByUsernameAndPassword       : ==> Parameters: jack(String), e10adc3949ba59abbe56e057f20f883e(String)
+2020-06-02 16:44:16.787 DEBUG 11008 --- [http-nio-8089-exec-9] c.b.d.U.queryByUsernameAndPassword       : <==      Total: 1
+2020-06-02 16:44:38.272  INFO 11008 --- [http-nio-8089-exec-1] com.blog.aspect.LogAspect                : Request: LogAspect.RequestLog(url=http://localhost:8089/, ip=0:0:0:0:0:0:0:1, classMethod=com.blog.controller.IndexController.toIndex, args=[1, {}])
+2020-06-02 16:44:38.294 DEBUG 11008 --- [http-nio-8089-exec-1] com.blog.dao.BlogDao.getIndexBlog_COUNT  : ==>  Preparing: SELECT count(0) FROM t_blog b, t_type t, t_user u WHERE b.type_id = t.id AND u.id = b.user_id 
+2020-06-02 16:44:38.294 DEBUG 11008 --- [http-nio-8089-exec-1] com.blog.dao.BlogDao.getIndexBlog_COUNT  : ==> Parameters: 
+2020-06-02 16:44:38.296 DEBUG 11008 --- [http-nio-8089-exec-1] com.blog.dao.BlogDao.getIndexBlog_COUNT  : <==      Total: 1
+2020-06-02 16:44:38.297 DEBUG 11008 --- [http-nio-8089-exec-1] com.blog.dao.BlogDao.getIndexBlog        : ==>  Preparing: /*主页博客展示*/ select b.id, b.title, b.first_picture, b.views, b.update_time, b.description, t.name typename, t.id typeid, u.nickname, u.avatar from t_blog b, t_type t, t_user u where b.type_id = t.id and u.id = b.user_id order by b.update_time desc LIMIT ? 
+2020-06-02 16:44:38.298 DEBUG 11008 --- [http-nio-8089-exec-1] com.blog.dao.BlogDao.getIndexBlog        : ==> Parameters: 8(Integer)
+2020-06-02 16:44:38.366 DEBUG 11008 --- [http-nio-8089-exec-1] com.blog.dao.BlogDao.getIndexBlog        : <==      Total: 8
+2020-06-02 16:44:38.367 DEBUG 11008 --- [http-nio-8089-exec-1] com.blog.dao.TypeDao.getBlogType         : ==>  Preparing: select t.id tid, t.name, b.id bid, b.title, b.type_id from t_type t, t_blog b where t.id = b.type_id 
+2020-06-02 16:44:38.368 DEBUG 11008 --- [http-nio-8089-exec-1] com.blog.dao.TypeDao.getBlogType         : ==> Parameters: 
+2020-06-02 16:44:38.370 DEBUG 11008 --- [http-nio-8089-exec-1] com.blog.dao.TypeDao.getBlogType         : <==      Total: 8
+2020-06-02 16:44:38.371 DEBUG 11008 --- [http-nio-8089-exec-1] com.blog.dao.TagDao.getBlogTag           : ==>  Preparing: select t.id tid, t.name, b.id bid, b.title from t_tag t, t_blog b, t_blog_tags bt where t.id = bt.tag_id and b.id = bt.blog_id 
+2020-06-02 16:44:38.371 DEBUG 11008 --- [http-nio-8089-exec-1] com.blog.dao.TagDao.getBlogTag           : ==> Parameters: 
+2020-06-02 16:44:38.373 DEBUG 11008 --- [http-nio-8089-exec-1] com.blog.dao.TagDao.getBlogTag           : <==      Total: 12
+2020-06-02 16:44:38.374 DEBUG 11008 --- [http-nio-8089-exec-1] c.blog.dao.BlogDao.getAllRecommendBlog   : ==>  Preparing: select id, title, recommend from t_blog order by update_time desc; 
+2020-06-02 16:44:38.375 DEBUG 11008 --- [http-nio-8089-exec-1] c.blog.dao.BlogDao.getAllRecommendBlog   : ==> Parameters: 
+2020-06-02 16:44:38.377 DEBUG 11008 --- [http-nio-8089-exec-1] c.blog.dao.BlogDao.getAllRecommendBlog   : <==      Total: 8
+2020-06-02 16:44:38.377  INFO 11008 --- [http-nio-8089-exec-1] com.blog.aspect.LogAspect                : ------------doAfter------------
+2020-06-02 16:44:38.377  INFO 11008 --- [http-nio-8089-exec-1] com.blog.aspect.LogAspect                : Result: index
+2020-06-02 16:44:57.013  INFO 10428 --- [restartedMain] com.blog.BlogApplication                 : Starting BlogApplication on DESKTOP-TB59BV9 with PID 10428 (D:\IdeaSpace\blog\target\classes started by admin in D:\IdeaSpace\blog)
+2020-06-02 16:44:57.029 DEBUG 10428 --- [restartedMain] com.blog.BlogApplication                 : Running with Spring Boot v2.2.5.RELEASE, Spring v5.2.4.RELEASE
+2020-06-02 16:44:57.032  INFO 10428 --- [restartedMain] com.blog.BlogApplication                 : The following profiles are active: dev
+2020-06-02 16:44:57.162  INFO 10428 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-06-02 16:44:57.163  INFO 10428 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-06-02 16:45:00.698  INFO 10428 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8089 (http)
+2020-06-02 16:45:00.712  INFO 10428 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-06-02 16:45:00.712  INFO 10428 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.31]
+2020-06-02 16:45:00.976  INFO 10428 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-06-02 16:45:00.976  INFO 10428 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 3813 ms
+2020-06-02 16:45:02.482  INFO 10428 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-06-02 16:45:02.702  INFO 10428 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2020-06-02 16:45:03.313  WARN 10428 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : Unable to start LiveReload server
+2020-06-02 16:45:03.395  INFO 10428 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8089 (http) with context path ''
+2020-06-02 16:45:03.402  INFO 10428 --- [restartedMain] com.blog.BlogApplication                 : Started BlogApplication in 7.577 seconds (JVM running for 10.714)
+2020-06-02 16:45:50.334  INFO 10428 --- [http-nio-8089-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-06-02 16:45:50.334  INFO 10428 --- [http-nio-8089-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-06-02 16:45:50.358  INFO 10428 --- [http-nio-8089-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 23 ms
+2020-06-02 16:45:57.244  INFO 10428 --- [http-nio-8089-exec-9] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-06-02 16:45:57.438  INFO 10428 --- [http-nio-8089-exec-9] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-06-02 16:45:57.450 DEBUG 10428 --- [http-nio-8089-exec-9] c.b.d.U.queryByUsernameAndPassword       : ==>  Preparing: select * from blog.t_user where username = ? and password = ?; 
+2020-06-02 16:45:57.485 DEBUG 10428 --- [http-nio-8089-exec-9] c.b.d.U.queryByUsernameAndPassword       : ==> Parameters: jack(String), e10adc3949ba59abbe56e057f20f883e(String)
+2020-06-02 16:45:57.519 DEBUG 10428 --- [http-nio-8089-exec-9] c.b.d.U.queryByUsernameAndPassword       : <==      Total: 1
+2020-06-02 16:47:47.552  INFO 3164 --- [restartedMain] com.blog.BlogApplication                 : Starting BlogApplication on DESKTOP-TB59BV9 with PID 3164 (D:\IdeaSpace\blog\target\classes started by admin in D:\IdeaSpace\blog)
+2020-06-02 16:47:47.557 DEBUG 3164 --- [restartedMain] com.blog.BlogApplication                 : Running with Spring Boot v2.2.5.RELEASE, Spring v5.2.4.RELEASE
+2020-06-02 16:47:47.558  INFO 3164 --- [restartedMain] com.blog.BlogApplication                 : The following profiles are active: dev
+2020-06-02 16:47:47.671  INFO 3164 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-06-02 16:47:47.672  INFO 3164 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-06-02 16:47:50.941  INFO 3164 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8089 (http)
+2020-06-02 16:47:50.954  INFO 3164 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-06-02 16:47:50.955  INFO 3164 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.31]
+2020-06-02 16:47:51.167  INFO 3164 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-06-02 16:47:51.167  INFO 3164 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 3484 ms
+2020-06-02 16:47:52.390  INFO 3164 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-06-02 16:47:52.556  INFO 3164 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2020-06-02 16:47:53.160  WARN 3164 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : Unable to start LiveReload server
+2020-06-02 16:47:53.247  INFO 3164 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8089 (http) with context path ''
+2020-06-02 16:47:53.253  INFO 3164 --- [restartedMain] com.blog.BlogApplication                 : Started BlogApplication in 6.988 seconds (JVM running for 9.673)
+2020-06-02 16:48:03.176  INFO 3164 --- [http-nio-8089-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-06-02 16:48:03.178  INFO 3164 --- [http-nio-8089-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-06-02 16:48:03.199  INFO 3164 --- [http-nio-8089-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 21 ms
+2020-06-02 16:48:07.962  INFO 3164 --- [http-nio-8089-exec-3] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-06-02 16:48:08.150  INFO 3164 --- [http-nio-8089-exec-3] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-06-02 16:48:08.162 DEBUG 3164 --- [http-nio-8089-exec-3] c.b.d.U.queryByUsernameAndPassword       : ==>  Preparing: select * from blog.t_user where username = ? and password = ?; 
+2020-06-02 16:48:08.200 DEBUG 3164 --- [http-nio-8089-exec-3] c.b.d.U.queryByUsernameAndPassword       : ==> Parameters: jack(String), e10adc3949ba59abbe56e057f20f883e(String)
+2020-06-02 16:48:08.232 DEBUG 3164 --- [http-nio-8089-exec-3] c.b.d.U.queryByUsernameAndPassword       : <==      Total: 1
+2020-06-02 16:50:23.759  INFO 5880 --- [restartedMain] com.blog.BlogApplication                 : Starting BlogApplication on DESKTOP-TB59BV9 with PID 5880 (D:\IdeaSpace\blog\target\classes started by admin in D:\IdeaSpace\blog)
+2020-06-02 16:50:23.765 DEBUG 5880 --- [restartedMain] com.blog.BlogApplication                 : Running with Spring Boot v2.2.5.RELEASE, Spring v5.2.4.RELEASE
+2020-06-02 16:50:23.765  INFO 5880 --- [restartedMain] com.blog.BlogApplication                 : The following profiles are active: dev
+2020-06-02 16:50:23.874  INFO 5880 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-06-02 16:50:23.874  INFO 5880 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-06-02 16:50:27.526  INFO 5880 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8089 (http)
+2020-06-02 16:50:27.540  INFO 5880 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-06-02 16:50:27.540  INFO 5880 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.31]
+2020-06-02 16:50:27.763  INFO 5880 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-06-02 16:50:27.763  INFO 5880 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 3888 ms
+2020-06-02 16:50:29.146  INFO 5880 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-06-02 16:50:29.305  INFO 5880 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2020-06-02 16:50:29.938  WARN 5880 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : Unable to start LiveReload server
+2020-06-02 16:50:30.034  INFO 5880 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8089 (http) with context path ''
+2020-06-02 16:50:30.039  INFO 5880 --- [restartedMain] com.blog.BlogApplication                 : Started BlogApplication in 7.535 seconds (JVM running for 10.032)
+2020-06-02 16:50:31.364  INFO 5880 --- [http-nio-8089-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-06-02 16:50:31.365  INFO 5880 --- [http-nio-8089-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-06-02 16:50:31.383  INFO 5880 --- [http-nio-8089-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 18 ms
+2020-06-02 16:51:35.542 ERROR 5880 --- [http-nio-8089-exec-3] c.b.handler.ControllerExceptionHandler   : Request url: /admin/login, Exception: {}
+
+org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' not supported
+	at org.springframework.web.servlet.mvc.method.RequestMappingInfoHandlerMapping.handleNoMatch(RequestMappingInfoHandlerMapping.java:213) ~[spring-webmvc-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.lookupHandlerMethod(AbstractHandlerMethodMapping.java:421) ~[spring-webmvc-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.getHandlerInternal(AbstractHandlerMethodMapping.java:367) ~[spring-webmvc-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.web.servlet.mvc.method.RequestMappingInfoHandlerMapping.getHandlerInternal(RequestMappingInfoHandlerMapping.java:110) ~[spring-webmvc-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.web.servlet.mvc.method.RequestMappingInfoHandlerMapping.getHandlerInternal(RequestMappingInfoHandlerMapping.java:59) ~[spring-webmvc-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.web.servlet.handler.AbstractHandlerMapping.getHandler(AbstractHandlerMapping.java:395) ~[spring-webmvc-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.getHandler(DispatcherServlet.java:1234) ~[spring-webmvc-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1016) ~[spring-webmvc-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943) ~[spring-webmvc-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006) [spring-webmvc-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898) [spring-webmvc-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:634) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883) [spring-webmvc-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) [tomcat-embed-websocket-9.0.31.jar:9.0.31]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) [spring-web-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) [spring-web-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) [spring-web-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) [spring-web-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) [spring-web-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) [spring-web-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:367) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1639) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [na:1.8.0_211]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [na:1.8.0_211]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at java.lang.Thread.run(Thread.java:748) [na:1.8.0_211]
+
+2020-06-02 16:51:35.545  WARN 5880 --- [http-nio-8089-exec-3] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' not supported]
+2020-06-02 16:51:38.777 ERROR 5880 --- [http-nio-8089-exec-2] c.b.handler.ControllerExceptionHandler   : Request url: /admin/login, Exception: {}
+
+org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' not supported
+	at org.springframework.web.servlet.mvc.method.RequestMappingInfoHandlerMapping.handleNoMatch(RequestMappingInfoHandlerMapping.java:213) ~[spring-webmvc-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.lookupHandlerMethod(AbstractHandlerMethodMapping.java:421) ~[spring-webmvc-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.getHandlerInternal(AbstractHandlerMethodMapping.java:367) ~[spring-webmvc-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.web.servlet.mvc.method.RequestMappingInfoHandlerMapping.getHandlerInternal(RequestMappingInfoHandlerMapping.java:110) ~[spring-webmvc-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.web.servlet.mvc.method.RequestMappingInfoHandlerMapping.getHandlerInternal(RequestMappingInfoHandlerMapping.java:59) ~[spring-webmvc-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.web.servlet.handler.AbstractHandlerMapping.getHandler(AbstractHandlerMapping.java:395) ~[spring-webmvc-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.getHandler(DispatcherServlet.java:1234) ~[spring-webmvc-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1016) ~[spring-webmvc-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943) ~[spring-webmvc-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006) [spring-webmvc-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898) [spring-webmvc-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:634) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883) [spring-webmvc-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) [tomcat-embed-websocket-9.0.31.jar:9.0.31]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) [spring-web-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) [spring-web-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) [spring-web-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) [spring-web-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) [spring-web-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) [spring-web-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:367) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1639) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [na:1.8.0_211]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [na:1.8.0_211]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at java.lang.Thread.run(Thread.java:748) [na:1.8.0_211]
+
+2020-06-02 16:51:38.779  WARN 5880 --- [http-nio-8089-exec-2] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' not supported]
+2020-06-02 16:51:56.603 ERROR 5880 --- [http-nio-8089-exec-9] c.b.handler.ControllerExceptionHandler   : Request url: /admin/login, Exception: {}
+
+org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' not supported
+	at org.springframework.web.servlet.mvc.method.RequestMappingInfoHandlerMapping.handleNoMatch(RequestMappingInfoHandlerMapping.java:213) ~[spring-webmvc-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.lookupHandlerMethod(AbstractHandlerMethodMapping.java:421) ~[spring-webmvc-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.getHandlerInternal(AbstractHandlerMethodMapping.java:367) ~[spring-webmvc-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.web.servlet.mvc.method.RequestMappingInfoHandlerMapping.getHandlerInternal(RequestMappingInfoHandlerMapping.java:110) ~[spring-webmvc-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.web.servlet.mvc.method.RequestMappingInfoHandlerMapping.getHandlerInternal(RequestMappingInfoHandlerMapping.java:59) ~[spring-webmvc-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.web.servlet.handler.AbstractHandlerMapping.getHandler(AbstractHandlerMapping.java:395) ~[spring-webmvc-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.getHandler(DispatcherServlet.java:1234) ~[spring-webmvc-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1016) ~[spring-webmvc-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943) ~[spring-webmvc-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006) [spring-webmvc-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898) [spring-webmvc-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:634) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883) [spring-webmvc-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) [tomcat-embed-websocket-9.0.31.jar:9.0.31]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) [spring-web-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) [spring-web-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) [spring-web-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) [spring-web-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) [spring-web-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) [spring-web-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:367) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1639) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [na:1.8.0_211]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [na:1.8.0_211]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at java.lang.Thread.run(Thread.java:748) [na:1.8.0_211]
+
+2020-06-02 16:51:56.604  WARN 5880 --- [http-nio-8089-exec-9] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' not supported]
+2020-06-02 16:52:20.548  INFO 5880 --- [http-nio-8089-exec-9] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-06-02 16:52:20.774  INFO 5880 --- [http-nio-8089-exec-9] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-06-02 16:52:20.789 DEBUG 5880 --- [http-nio-8089-exec-9] c.b.d.U.queryByUsernameAndPassword       : ==>  Preparing: select * from blog.t_user where username = ? and password = ?; 
+2020-06-02 16:52:20.836 DEBUG 5880 --- [http-nio-8089-exec-9] c.b.d.U.queryByUsernameAndPassword       : ==> Parameters: jack(String), e10adc3949ba59abbe56e057f20f883e(String)
+2020-06-02 16:52:20.871 DEBUG 5880 --- [http-nio-8089-exec-9] c.b.d.U.queryByUsernameAndPassword       : <==      Total: 1
+2020-06-02 16:53:41.544  INFO 11224 --- [restartedMain] com.blog.BlogApplication                 : Starting BlogApplication on DESKTOP-TB59BV9 with PID 11224 (D:\IdeaSpace\blog\target\classes started by admin in D:\IdeaSpace\blog)
+2020-06-02 16:53:41.556 DEBUG 11224 --- [restartedMain] com.blog.BlogApplication                 : Running with Spring Boot v2.2.5.RELEASE, Spring v5.2.4.RELEASE
+2020-06-02 16:53:41.557  INFO 11224 --- [restartedMain] com.blog.BlogApplication                 : The following profiles are active: dev
+2020-06-02 16:53:41.701  INFO 11224 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-06-02 16:53:41.701  INFO 11224 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-06-02 16:53:45.227  INFO 11224 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8089 (http)
+2020-06-02 16:53:45.241  INFO 11224 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-06-02 16:53:45.242  INFO 11224 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.31]
+2020-06-02 16:53:45.477  INFO 11224 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-06-02 16:53:45.478  INFO 11224 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 3776 ms
+2020-06-02 16:53:47.282  INFO 11224 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-06-02 16:53:47.464  INFO 11224 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2020-06-02 16:53:48.199  WARN 11224 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : Unable to start LiveReload server
+2020-06-02 16:53:48.327  INFO 11224 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8089 (http) with context path ''
+2020-06-02 16:53:48.334  INFO 11224 --- [restartedMain] com.blog.BlogApplication                 : Started BlogApplication in 8.029 seconds (JVM running for 10.064)
+2020-06-02 16:53:48.566  INFO 11224 --- [http-nio-8089-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-06-02 16:53:48.567  INFO 11224 --- [http-nio-8089-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-06-02 16:53:48.599  INFO 11224 --- [http-nio-8089-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 32 ms
+2020-06-02 16:53:48.732  INFO 11224 --- [http-nio-8089-exec-2] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-06-02 16:53:49.050  INFO 11224 --- [http-nio-8089-exec-2] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-06-02 16:53:49.062 DEBUG 11224 --- [http-nio-8089-exec-2] c.b.d.U.queryByUsernameAndPassword       : ==>  Preparing: select * from blog.t_user where username = ? and password = ?; 
+2020-06-02 16:53:49.099 DEBUG 11224 --- [http-nio-8089-exec-2] c.b.d.U.queryByUsernameAndPassword       : ==> Parameters: jack(String), e10adc3949ba59abbe56e057f20f883e(String)
+2020-06-02 16:53:49.134 DEBUG 11224 --- [http-nio-8089-exec-2] c.b.d.U.queryByUsernameAndPassword       : <==      Total: 1
+2020-06-02 16:54:44.934  INFO 9232 --- [restartedMain] com.blog.BlogApplication                 : Starting BlogApplication on DESKTOP-TB59BV9 with PID 9232 (D:\IdeaSpace\blog\target\classes started by admin in D:\IdeaSpace\blog)
+2020-06-02 16:54:44.975 DEBUG 9232 --- [restartedMain] com.blog.BlogApplication                 : Running with Spring Boot v2.2.5.RELEASE, Spring v5.2.4.RELEASE
+2020-06-02 16:54:44.979  INFO 9232 --- [restartedMain] com.blog.BlogApplication                 : The following profiles are active: dev
+2020-06-02 16:54:45.137  INFO 9232 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-06-02 16:54:45.138  INFO 9232 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-06-02 16:54:52.683  INFO 8016 --- [restartedMain] com.blog.BlogApplication                 : Starting BlogApplication on DESKTOP-TB59BV9 with PID 8016 (D:\IdeaSpace\blog\target\classes started by admin in D:\IdeaSpace\blog)
+2020-06-02 16:54:52.689 DEBUG 8016 --- [restartedMain] com.blog.BlogApplication                 : Running with Spring Boot v2.2.5.RELEASE, Spring v5.2.4.RELEASE
+2020-06-02 16:54:52.719  INFO 8016 --- [restartedMain] com.blog.BlogApplication                 : The following profiles are active: dev
+2020-06-02 16:54:52.830  INFO 8016 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-06-02 16:54:52.831  INFO 8016 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-06-02 16:54:55.860  INFO 8016 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8089 (http)
+2020-06-02 16:54:55.874  INFO 8016 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-06-02 16:54:55.874  INFO 8016 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.31]
+2020-06-02 16:54:56.038  INFO 8016 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-06-02 16:54:56.039  INFO 8016 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 3208 ms
+2020-06-02 16:54:57.252  INFO 8016 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-06-02 16:54:57.410  INFO 8016 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2020-06-02 16:54:58.051  WARN 8016 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : Unable to start LiveReload server
+2020-06-02 16:54:58.140  INFO 8016 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8089 (http) with context path ''
+2020-06-02 16:54:58.145  INFO 8016 --- [restartedMain] com.blog.BlogApplication                 : Started BlogApplication in 6.553 seconds (JVM running for 8.502)
+2020-06-02 16:55:04.360  INFO 8016 --- [http-nio-8089-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-06-02 16:55:04.361  INFO 8016 --- [http-nio-8089-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-06-02 16:55:04.379  INFO 8016 --- [http-nio-8089-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 18 ms
+2020-06-02 16:55:04.468  INFO 8016 --- [http-nio-8089-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-06-02 16:55:04.665  INFO 8016 --- [http-nio-8089-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-06-02 16:55:04.676 DEBUG 8016 --- [http-nio-8089-exec-1] c.b.d.U.queryByUsernameAndPassword       : ==>  Preparing: select * from blog.t_user where username = ? and password = ?; 
+2020-06-02 16:55:04.715 DEBUG 8016 --- [http-nio-8089-exec-1] c.b.d.U.queryByUsernameAndPassword       : ==> Parameters: jack(String), e10adc3949ba59abbe56e057f20f883e(String)
+2020-06-02 16:55:04.754 DEBUG 8016 --- [http-nio-8089-exec-1] c.b.d.U.queryByUsernameAndPassword       : <==      Total: 1
+2020-06-02 16:55:55.332  INFO 4040 --- [restartedMain] com.blog.BlogApplication                 : Starting BlogApplication on DESKTOP-TB59BV9 with PID 4040 (D:\IdeaSpace\blog\target\classes started by admin in D:\IdeaSpace\blog)
+2020-06-02 16:55:55.338 DEBUG 4040 --- [restartedMain] com.blog.BlogApplication                 : Running with Spring Boot v2.2.5.RELEASE, Spring v5.2.4.RELEASE
+2020-06-02 16:55:55.339  INFO 4040 --- [restartedMain] com.blog.BlogApplication                 : The following profiles are active: dev
+2020-06-02 16:55:55.703  INFO 4040 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-06-02 16:55:55.704  INFO 4040 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-06-02 16:55:58.928  INFO 4040 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8089 (http)
+2020-06-02 16:55:58.945  INFO 4040 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-06-02 16:55:58.946  INFO 4040 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.31]
+2020-06-02 16:55:59.175  INFO 4040 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-06-02 16:55:59.176  INFO 4040 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 3472 ms
+2020-06-02 16:56:00.498  INFO 4040 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-06-02 16:56:00.674  INFO 4040 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2020-06-02 16:56:01.479  WARN 4040 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : Unable to start LiveReload server
+2020-06-02 16:56:01.574  INFO 4040 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8089 (http) with context path ''
+2020-06-02 16:56:01.582  INFO 4040 --- [restartedMain] com.blog.BlogApplication                 : Started BlogApplication in 8.169 seconds (JVM running for 11.521)
+2020-06-02 16:56:38.328  INFO 4040 --- [http-nio-8089-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-06-02 16:56:38.329  INFO 4040 --- [http-nio-8089-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-06-02 16:56:38.349  INFO 4040 --- [http-nio-8089-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 20 ms
+2020-06-02 16:56:38.447  INFO 4040 --- [http-nio-8089-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-06-02 16:56:38.677  INFO 4040 --- [http-nio-8089-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-06-02 16:56:38.690 DEBUG 4040 --- [http-nio-8089-exec-1] c.b.d.U.queryByUsernameAndPassword       : ==>  Preparing: select * from blog.t_user where username = ? and password = ?; 
+2020-06-02 16:56:38.728 DEBUG 4040 --- [http-nio-8089-exec-1] c.b.d.U.queryByUsernameAndPassword       : ==> Parameters: jack(String), e10adc3949ba59abbe56e057f20f883e(String)
+2020-06-02 16:56:38.759 DEBUG 4040 --- [http-nio-8089-exec-1] c.b.d.U.queryByUsernameAndPassword       : <==      Total: 1
+2020-06-02 16:57:19.110  INFO 10660 --- [restartedMain] com.blog.BlogApplication                 : Starting BlogApplication on DESKTOP-TB59BV9 with PID 10660 (D:\IdeaSpace\blog\target\classes started by admin in D:\IdeaSpace\blog)
+2020-06-02 16:57:19.128 DEBUG 10660 --- [restartedMain] com.blog.BlogApplication                 : Running with Spring Boot v2.2.5.RELEASE, Spring v5.2.4.RELEASE
+2020-06-02 16:57:19.129  INFO 10660 --- [restartedMain] com.blog.BlogApplication                 : The following profiles are active: dev
+2020-06-02 16:57:19.448  INFO 10660 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-06-02 16:57:19.449  INFO 10660 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-06-02 16:57:22.634  INFO 10660 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8089 (http)
+2020-06-02 16:57:22.659  INFO 10660 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-06-02 16:57:22.659  INFO 10660 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.31]
+2020-06-02 16:57:22.957  INFO 10660 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-06-02 16:57:22.958  INFO 10660 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 3508 ms
+2020-06-02 16:57:24.405  INFO 10660 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-06-02 16:57:24.573  INFO 10660 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2020-06-02 16:57:25.191  WARN 10660 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : Unable to start LiveReload server
+2020-06-02 16:57:25.284  INFO 10660 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8089 (http) with context path ''
+2020-06-02 16:57:25.289  INFO 10660 --- [restartedMain] com.blog.BlogApplication                 : Started BlogApplication in 7.447 seconds (JVM running for 9.709)
+2020-06-02 16:57:44.216  INFO 9548 --- [restartedMain] com.blog.BlogApplication                 : Starting BlogApplication on DESKTOP-TB59BV9 with PID 9548 (D:\IdeaSpace\blog\target\classes started by admin in D:\IdeaSpace\blog)
+2020-06-02 16:57:44.241 DEBUG 9548 --- [restartedMain] com.blog.BlogApplication                 : Running with Spring Boot v2.2.5.RELEASE, Spring v5.2.4.RELEASE
+2020-06-02 16:57:44.242  INFO 9548 --- [restartedMain] com.blog.BlogApplication                 : The following profiles are active: dev
+2020-06-02 16:57:44.410  INFO 9548 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-06-02 16:57:44.411  INFO 9548 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-06-02 16:57:47.502  INFO 9548 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8089 (http)
+2020-06-02 16:57:47.520  INFO 9548 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-06-02 16:57:47.521  INFO 9548 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.31]
+2020-06-02 16:57:47.720  INFO 9548 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-06-02 16:57:47.720  INFO 9548 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 3309 ms
+2020-06-02 16:57:49.003  INFO 9548 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-06-02 16:57:49.188  INFO 9548 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2020-06-02 16:57:49.788  WARN 9548 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : Unable to start LiveReload server
+2020-06-02 16:57:49.868  INFO 9548 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8089 (http) with context path ''
+2020-06-02 16:57:49.873  INFO 9548 --- [restartedMain] com.blog.BlogApplication                 : Started BlogApplication in 6.903 seconds (JVM running for 8.78)
+2020-06-02 16:57:55.108  INFO 9548 --- [http-nio-8089-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-06-02 16:57:55.109  INFO 9548 --- [http-nio-8089-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-06-02 16:57:55.129  INFO 9548 --- [http-nio-8089-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 19 ms
+2020-06-02 16:57:55.227  INFO 9548 --- [http-nio-8089-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-06-02 16:57:55.416  INFO 9548 --- [http-nio-8089-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-06-02 16:57:55.429 DEBUG 9548 --- [http-nio-8089-exec-1] c.b.d.U.queryByUsernameAndPassword       : ==>  Preparing: select * from blog.t_user where username = ? and password = ?; 
+2020-06-02 16:57:55.473 DEBUG 9548 --- [http-nio-8089-exec-1] c.b.d.U.queryByUsernameAndPassword       : ==> Parameters: jack(String), e10adc3949ba59abbe56e057f20f883e(String)
+2020-06-02 16:57:55.507 DEBUG 9548 --- [http-nio-8089-exec-1] c.b.d.U.queryByUsernameAndPassword       : <==      Total: 1
+2020-06-02 16:58:48.341  INFO 10996 --- [restartedMain] com.blog.BlogApplication                 : Starting BlogApplication on DESKTOP-TB59BV9 with PID 10996 (D:\IdeaSpace\blog\target\classes started by admin in D:\IdeaSpace\blog)
+2020-06-02 16:58:48.347 DEBUG 10996 --- [restartedMain] com.blog.BlogApplication                 : Running with Spring Boot v2.2.5.RELEASE, Spring v5.2.4.RELEASE
+2020-06-02 16:58:48.347  INFO 10996 --- [restartedMain] com.blog.BlogApplication                 : The following profiles are active: dev
+2020-06-02 16:58:48.457  INFO 10996 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-06-02 16:58:48.458  INFO 10996 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-06-02 16:58:51.183  INFO 10996 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8089 (http)
+2020-06-02 16:58:51.197  INFO 10996 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-06-02 16:58:51.197  INFO 10996 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.31]
+2020-06-02 16:58:51.379  INFO 10996 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-06-02 16:58:51.380  INFO 10996 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 2921 ms
+2020-06-02 16:58:52.694  INFO 10996 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-06-02 16:58:52.861  INFO 10996 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2020-06-02 16:58:53.576  WARN 10996 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : Unable to start LiveReload server
+2020-06-02 16:58:53.683  INFO 10996 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8089 (http) with context path ''
+2020-06-02 16:58:53.691  INFO 10996 --- [restartedMain] com.blog.BlogApplication                 : Started BlogApplication in 6.466 seconds (JVM running for 8.32)
+2020-06-02 16:58:59.014  INFO 10996 --- [http-nio-8089-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-06-02 16:58:59.015  INFO 10996 --- [http-nio-8089-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-06-02 16:58:59.042  INFO 10996 --- [http-nio-8089-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 26 ms
+2020-06-02 16:58:59.167  INFO 10996 --- [http-nio-8089-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-06-02 16:58:59.399  INFO 10996 --- [http-nio-8089-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-06-02 16:58:59.410 DEBUG 10996 --- [http-nio-8089-exec-1] c.b.d.U.queryByUsernameAndPassword       : ==>  Preparing: select * from blog.t_user where username = ? and password = ?; 
+2020-06-02 16:58:59.447 DEBUG 10996 --- [http-nio-8089-exec-1] c.b.d.U.queryByUsernameAndPassword       : ==> Parameters: jack(String), e10adc3949ba59abbe56e057f20f883e(String)
+2020-06-02 16:58:59.480 DEBUG 10996 --- [http-nio-8089-exec-1] c.b.d.U.queryByUsernameAndPassword       : <==      Total: 1
+2020-06-02 17:01:04.481  INFO 10236 --- [restartedMain] com.blog.BlogApplication                 : Starting BlogApplication on DESKTOP-TB59BV9 with PID 10236 (D:\IdeaSpace\blog\target\classes started by admin in D:\IdeaSpace\blog)
+2020-06-02 17:01:04.487 DEBUG 10236 --- [restartedMain] com.blog.BlogApplication                 : Running with Spring Boot v2.2.5.RELEASE, Spring v5.2.4.RELEASE
+2020-06-02 17:01:04.489  INFO 10236 --- [restartedMain] com.blog.BlogApplication                 : The following profiles are active: dev
+2020-06-02 17:01:04.656  INFO 10236 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-06-02 17:01:04.657  INFO 10236 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-06-02 17:01:07.987  INFO 10236 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8089 (http)
+2020-06-02 17:01:08.005  INFO 10236 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-06-02 17:01:08.006  INFO 10236 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.31]
+2020-06-02 17:01:08.250  INFO 10236 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-06-02 17:01:08.251  INFO 10236 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 3594 ms
+2020-06-02 17:01:09.748  INFO 10236 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-06-02 17:01:09.915  INFO 10236 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2020-06-02 17:01:10.563  WARN 10236 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : Unable to start LiveReload server
+2020-06-02 17:01:10.646  INFO 10236 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8089 (http) with context path ''
+2020-06-02 17:01:10.656  INFO 10236 --- [restartedMain] com.blog.BlogApplication                 : Started BlogApplication in 7.367 seconds (JVM running for 9.366)
+2020-06-02 17:01:10.783  INFO 10236 --- [http-nio-8089-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-06-02 17:01:10.784  INFO 10236 --- [http-nio-8089-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-06-02 17:01:10.804  INFO 10236 --- [http-nio-8089-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 19 ms
+2020-06-02 17:01:10.898  INFO 10236 --- [http-nio-8089-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-06-02 17:01:11.113  INFO 10236 --- [http-nio-8089-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-06-02 17:01:11.127 DEBUG 10236 --- [http-nio-8089-exec-1] c.b.d.U.queryByUsernameAndPassword       : ==>  Preparing: select * from blog.t_user where username = ? and password = ?; 
+2020-06-02 17:01:11.195 DEBUG 10236 --- [http-nio-8089-exec-1] c.b.d.U.queryByUsernameAndPassword       : ==> Parameters: jack(String), e10adc3949ba59abbe56e057f20f883e(String)
+2020-06-02 17:01:11.253 DEBUG 10236 --- [http-nio-8089-exec-1] c.b.d.U.queryByUsernameAndPassword       : <==      Total: 1
+2020-06-02 17:01:16.830 DEBUG 10236 --- [http-nio-8089-exec-8] c.b.d.U.queryByUsernameAndPassword       : ==>  Preparing: select * from blog.t_user where username = ? and password = ?; 
+2020-06-02 17:01:16.830 DEBUG 10236 --- [http-nio-8089-exec-8] c.b.d.U.queryByUsernameAndPassword       : ==> Parameters: jack(String), e10adc3949ba59abbe56e057f20f883e(String)
+2020-06-02 17:01:16.833 DEBUG 10236 --- [http-nio-8089-exec-8] c.b.d.U.queryByUsernameAndPassword       : <==      Total: 1
+2020-06-02 17:01:59.146  INFO 8524 --- [restartedMain] com.blog.BlogApplication                 : Starting BlogApplication on DESKTOP-TB59BV9 with PID 8524 (D:\IdeaSpace\blog\target\classes started by admin in D:\IdeaSpace\blog)
+2020-06-02 17:01:59.155 DEBUG 8524 --- [restartedMain] com.blog.BlogApplication                 : Running with Spring Boot v2.2.5.RELEASE, Spring v5.2.4.RELEASE
+2020-06-02 17:01:59.156  INFO 8524 --- [restartedMain] com.blog.BlogApplication                 : The following profiles are active: dev
+2020-06-02 17:01:59.330  INFO 8524 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-06-02 17:01:59.331  INFO 8524 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-06-02 17:02:02.552  INFO 8524 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8089 (http)
+2020-06-02 17:02:02.566  INFO 8524 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-06-02 17:02:02.566  INFO 8524 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.31]
+2020-06-02 17:02:02.758  INFO 8524 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-06-02 17:02:02.758  INFO 8524 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 3427 ms
+2020-06-02 17:02:04.141  INFO 8524 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-06-02 17:02:04.337  INFO 8524 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2020-06-02 17:02:04.991  WARN 8524 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : Unable to start LiveReload server
+2020-06-02 17:02:05.098  INFO 8524 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8089 (http) with context path ''
+2020-06-02 17:02:05.107  INFO 8524 --- [restartedMain] com.blog.BlogApplication                 : Started BlogApplication in 7.566 seconds (JVM running for 9.623)
+2020-06-02 17:02:06.010  INFO 8524 --- [http-nio-8089-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-06-02 17:02:06.011  INFO 8524 --- [http-nio-8089-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-06-02 17:02:06.040  INFO 8524 --- [http-nio-8089-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 29 ms
+2020-06-02 17:02:06.147  INFO 8524 --- [http-nio-8089-exec-2] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-06-02 17:02:06.416  INFO 8524 --- [http-nio-8089-exec-2] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-06-02 17:02:06.432 DEBUG 8524 --- [http-nio-8089-exec-2] c.b.d.U.queryByUsernameAndPassword       : ==>  Preparing: select * from blog.t_user where username = ? and password = ?; 
+2020-06-02 17:02:06.477 DEBUG 8524 --- [http-nio-8089-exec-2] c.b.d.U.queryByUsernameAndPassword       : ==> Parameters: jack(String), e10adc3949ba59abbe56e057f20f883e(String)
+2020-06-02 17:02:06.524 DEBUG 8524 --- [http-nio-8089-exec-2] c.b.d.U.queryByUsernameAndPassword       : <==      Total: 1
+2020-06-02 17:02:38.139  INFO 9588 --- [restartedMain] com.blog.BlogApplication                 : Starting BlogApplication on DESKTOP-TB59BV9 with PID 9588 (D:\IdeaSpace\blog\target\classes started by admin in D:\IdeaSpace\blog)
+2020-06-02 17:02:38.144 DEBUG 9588 --- [restartedMain] com.blog.BlogApplication                 : Running with Spring Boot v2.2.5.RELEASE, Spring v5.2.4.RELEASE
+2020-06-02 17:02:38.145  INFO 9588 --- [restartedMain] com.blog.BlogApplication                 : The following profiles are active: dev
+2020-06-02 17:02:38.315  INFO 9588 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-06-02 17:02:38.316  INFO 9588 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-06-02 17:02:41.443  INFO 9588 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8089 (http)
+2020-06-02 17:02:41.459  INFO 9588 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-06-02 17:02:41.460  INFO 9588 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.31]
+2020-06-02 17:02:41.683  INFO 9588 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-06-02 17:02:41.686  INFO 9588 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 3370 ms
+2020-06-02 17:02:43.051  INFO 9588 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-06-02 17:02:43.219  INFO 9588 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2020-06-02 17:02:43.971  WARN 9588 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : Unable to start LiveReload server
+2020-06-02 17:02:44.094  INFO 9588 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8089 (http) with context path ''
+2020-06-02 17:02:44.101  INFO 9588 --- [restartedMain] com.blog.BlogApplication                 : Started BlogApplication in 7.081 seconds (JVM running for 9.224)
+2020-06-02 17:02:45.935  INFO 9588 --- [http-nio-8089-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-06-02 17:02:45.937  INFO 9588 --- [http-nio-8089-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-06-02 17:02:45.957  INFO 9588 --- [http-nio-8089-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 20 ms
+2020-06-02 17:02:46.053  INFO 9588 --- [http-nio-8089-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-06-02 17:02:46.240  INFO 9588 --- [http-nio-8089-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-06-02 17:02:46.250 DEBUG 9588 --- [http-nio-8089-exec-1] c.b.d.U.queryByUsernameAndPassword       : ==>  Preparing: select * from blog.t_user where username = ? and password = ?; 
+2020-06-02 17:02:46.286 DEBUG 9588 --- [http-nio-8089-exec-1] c.b.d.U.queryByUsernameAndPassword       : ==> Parameters: jack(String), e10adc3949ba59abbe56e057f20f883e(String)
+2020-06-02 17:02:46.323 DEBUG 9588 --- [http-nio-8089-exec-1] c.b.d.U.queryByUsernameAndPassword       : <==      Total: 1
+2020-06-02 17:02:46.971 ERROR 9588 --- [http-nio-8089-exec-1] org.thymeleaf.TemplateEngine             : [THYMELEAF][http-nio-8089-exec-1] Exception processing template "admin/index": An error happened during template parsing (template: "class path resource [templates/admin/index.html]")
+
+org.thymeleaf.exceptions.TemplateInputException: An error happened during template parsing (template: "class path resource [templates/admin/index.html]")
+	at org.thymeleaf.templateparser.markup.AbstractMarkupTemplateParser.parse(AbstractMarkupTemplateParser.java:241) ~[thymeleaf-3.0.11.RELEASE.jar:3.0.11.RELEASE]
+	at org.thymeleaf.templateparser.markup.AbstractMarkupTemplateParser.parseStandalone(AbstractMarkupTemplateParser.java:100) ~[thymeleaf-3.0.11.RELEASE.jar:3.0.11.RELEASE]
+	at org.thymeleaf.engine.TemplateManager.parseAndProcess(TemplateManager.java:666) ~[thymeleaf-3.0.11.RELEASE.jar:3.0.11.RELEASE]
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1098) [thymeleaf-3.0.11.RELEASE.jar:3.0.11.RELEASE]
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1072) [thymeleaf-3.0.11.RELEASE.jar:3.0.11.RELEASE]
+	at org.thymeleaf.spring5.view.ThymeleafView.renderFragment(ThymeleafView.java:362) [thymeleaf-spring5-3.0.11.RELEASE.jar:3.0.11.RELEASE]
+	at org.thymeleaf.spring5.view.ThymeleafView.render(ThymeleafView.java:189) [thymeleaf-spring5-3.0.11.RELEASE.jar:3.0.11.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.render(DispatcherServlet.java:1373) [spring-webmvc-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1118) [spring-webmvc-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1057) [spring-webmvc-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943) [spring-webmvc-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006) [spring-webmvc-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:909) [spring-webmvc-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:660) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883) [spring-webmvc-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) [tomcat-embed-websocket-9.0.31.jar:9.0.31]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) [spring-web-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) [spring-web-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) [spring-web-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) [spring-web-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) [spring-web-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) [spring-web-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:367) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1639) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [na:1.8.0_211]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [na:1.8.0_211]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at java.lang.Thread.run(Thread.java:748) [na:1.8.0_211]
+Caused by: org.attoparser.ParseException: Could not parse as expression: "${session.user.nickname}," (template: "admin/index" - line 22, col 17)
+	at org.attoparser.MarkupParser.parseDocument(MarkupParser.java:393) ~[attoparser-2.0.5.RELEASE.jar:2.0.5.RELEASE]
+	at org.attoparser.MarkupParser.parse(MarkupParser.java:257) ~[attoparser-2.0.5.RELEASE.jar:2.0.5.RELEASE]
+	at org.thymeleaf.templateparser.markup.AbstractMarkupTemplateParser.parse(AbstractMarkupTemplateParser.java:230) ~[thymeleaf-3.0.11.RELEASE.jar:3.0.11.RELEASE]
+	... 48 common frames omitted
+Caused by: org.thymeleaf.exceptions.TemplateProcessingException: Could not parse as expression: "${session.user.nickname}," (template: "admin/index" - line 22, col 17)
+	at org.thymeleaf.standard.expression.StandardExpressionParser.parseExpression(StandardExpressionParser.java:131) ~[thymeleaf-3.0.11.RELEASE.jar:3.0.11.RELEASE]
+	at org.thymeleaf.standard.expression.StandardExpressionParser.parseExpression(StandardExpressionParser.java:62) ~[thymeleaf-3.0.11.RELEASE.jar:3.0.11.RELEASE]
+	at org.thymeleaf.standard.expression.StandardExpressionParser.parseExpression(StandardExpressionParser.java:44) ~[thymeleaf-3.0.11.RELEASE.jar:3.0.11.RELEASE]
+	at org.thymeleaf.engine.EngineEventUtils.parseAttributeExpression(EngineEventUtils.java:220) ~[thymeleaf-3.0.11.RELEASE.jar:3.0.11.RELEASE]
+	at org.thymeleaf.engine.EngineEventUtils.computeAttributeExpression(EngineEventUtils.java:207) ~[thymeleaf-3.0.11.RELEASE.jar:3.0.11.RELEASE]
+	at org.thymeleaf.standard.processor.AbstractStandardExpressionAttributeTagProcessor.doProcess(AbstractStandardExpressionAttributeTagProcessor.java:125) ~[thymeleaf-3.0.11.RELEASE.jar:3.0.11.RELEASE]
+	at org.thymeleaf.processor.element.AbstractAttributeTagProcessor.doProcess(AbstractAttributeTagProcessor.java:74) ~[thymeleaf-3.0.11.RELEASE.jar:3.0.11.RELEASE]
+	at org.thymeleaf.processor.element.AbstractElementTagProcessor.process(AbstractElementTagProcessor.java:95) ~[thymeleaf-3.0.11.RELEASE.jar:3.0.11.RELEASE]
+	at org.thymeleaf.util.ProcessorConfigurationUtils$ElementTagProcessorWrapper.process(ProcessorConfigurationUtils.java:633) ~[thymeleaf-3.0.11.RELEASE.jar:3.0.11.RELEASE]
+	at org.thymeleaf.engine.ProcessorTemplateHandler.handleOpenElement(ProcessorTemplateHandler.java:1314) ~[thymeleaf-3.0.11.RELEASE.jar:3.0.11.RELEASE]
+	at org.thymeleaf.engine.TemplateHandlerAdapterMarkupHandler.handleOpenElementEnd(TemplateHandlerAdapterMarkupHandler.java:304) ~[thymeleaf-3.0.11.RELEASE.jar:3.0.11.RELEASE]
+	at org.thymeleaf.templateparser.markup.InlinedOutputExpressionMarkupHandler$InlineMarkupAdapterPreProcessorHandler.handleOpenElementEnd(InlinedOutputExpressionMarkupHandler.java:278) ~[thymeleaf-3.0.11.RELEASE.jar:3.0.11.RELEASE]
+	at org.thymeleaf.standard.inline.OutputExpressionInlinePreProcessorHandler.handleOpenElementEnd(OutputExpressionInlinePreProcessorHandler.java:186) ~[thymeleaf-3.0.11.RELEASE.jar:3.0.11.RELEASE]
+	at org.thymeleaf.templateparser.markup.InlinedOutputExpressionMarkupHandler.handleOpenElementEnd(InlinedOutputExpressionMarkupHandler.java:124) ~[thymeleaf-3.0.11.RELEASE.jar:3.0.11.RELEASE]
+	at org.attoparser.HtmlElement.handleOpenElementEnd(HtmlElement.java:109) ~[attoparser-2.0.5.RELEASE.jar:2.0.5.RELEASE]
+	at org.attoparser.HtmlMarkupHandler.handleOpenElementEnd(HtmlMarkupHandler.java:297) ~[attoparser-2.0.5.RELEASE.jar:2.0.5.RELEASE]
+	at org.attoparser.MarkupEventProcessorHandler.handleOpenElementEnd(MarkupEventProcessorHandler.java:402) ~[attoparser-2.0.5.RELEASE.jar:2.0.5.RELEASE]
+	at org.attoparser.ParsingElementMarkupUtil.parseOpenElement(ParsingElementMarkupUtil.java:159) ~[attoparser-2.0.5.RELEASE.jar:2.0.5.RELEASE]
+	at org.attoparser.MarkupParser.parseBuffer(MarkupParser.java:710) ~[attoparser-2.0.5.RELEASE.jar:2.0.5.RELEASE]
+	at org.attoparser.MarkupParser.parseDocument(MarkupParser.java:301) ~[attoparser-2.0.5.RELEASE.jar:2.0.5.RELEASE]
+	... 50 common frames omitted
+
+2020-06-02 17:02:46.978 ERROR 9588 --- [http-nio-8089-exec-1] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is org.thymeleaf.exceptions.TemplateInputException: An error happened during template parsing (template: "class path resource [templates/admin/index.html]")] with root cause
+
+org.thymeleaf.exceptions.TemplateProcessingException: Could not parse as expression: "${session.user.nickname}," (template: "admin/index" - line 22, col 17)
+	at org.thymeleaf.standard.expression.StandardExpressionParser.parseExpression(StandardExpressionParser.java:131) ~[thymeleaf-3.0.11.RELEASE.jar:3.0.11.RELEASE]
+	at org.thymeleaf.standard.expression.StandardExpressionParser.parseExpression(StandardExpressionParser.java:62) ~[thymeleaf-3.0.11.RELEASE.jar:3.0.11.RELEASE]
+	at org.thymeleaf.standard.expression.StandardExpressionParser.parseExpression(StandardExpressionParser.java:44) ~[thymeleaf-3.0.11.RELEASE.jar:3.0.11.RELEASE]
+	at org.thymeleaf.engine.EngineEventUtils.parseAttributeExpression(EngineEventUtils.java:220) ~[thymeleaf-3.0.11.RELEASE.jar:3.0.11.RELEASE]
+	at org.thymeleaf.engine.EngineEventUtils.computeAttributeExpression(EngineEventUtils.java:207) ~[thymeleaf-3.0.11.RELEASE.jar:3.0.11.RELEASE]
+	at org.thymeleaf.standard.processor.AbstractStandardExpressionAttributeTagProcessor.doProcess(AbstractStandardExpressionAttributeTagProcessor.java:125) ~[thymeleaf-3.0.11.RELEASE.jar:3.0.11.RELEASE]
+	at org.thymeleaf.processor.element.AbstractAttributeTagProcessor.doProcess(AbstractAttributeTagProcessor.java:74) ~[thymeleaf-3.0.11.RELEASE.jar:3.0.11.RELEASE]
+	at org.thymeleaf.processor.element.AbstractElementTagProcessor.process(AbstractElementTagProcessor.java:95) ~[thymeleaf-3.0.11.RELEASE.jar:3.0.11.RELEASE]
+	at org.thymeleaf.util.ProcessorConfigurationUtils$ElementTagProcessorWrapper.process(ProcessorConfigurationUtils.java:633) ~[thymeleaf-3.0.11.RELEASE.jar:3.0.11.RELEASE]
+	at org.thymeleaf.engine.ProcessorTemplateHandler.handleOpenElement(ProcessorTemplateHandler.java:1314) ~[thymeleaf-3.0.11.RELEASE.jar:3.0.11.RELEASE]
+	at org.thymeleaf.engine.TemplateHandlerAdapterMarkupHandler.handleOpenElementEnd(TemplateHandlerAdapterMarkupHandler.java:304) ~[thymeleaf-3.0.11.RELEASE.jar:3.0.11.RELEASE]
+	at org.thymeleaf.templateparser.markup.InlinedOutputExpressionMarkupHandler$InlineMarkupAdapterPreProcessorHandler.handleOpenElementEnd(InlinedOutputExpressionMarkupHandler.java:278) ~[thymeleaf-3.0.11.RELEASE.jar:3.0.11.RELEASE]
+	at org.thymeleaf.standard.inline.OutputExpressionInlinePreProcessorHandler.handleOpenElementEnd(OutputExpressionInlinePreProcessorHandler.java:186) ~[thymeleaf-3.0.11.RELEASE.jar:3.0.11.RELEASE]
+	at org.thymeleaf.templateparser.markup.InlinedOutputExpressionMarkupHandler.handleOpenElementEnd(InlinedOutputExpressionMarkupHandler.java:124) ~[thymeleaf-3.0.11.RELEASE.jar:3.0.11.RELEASE]
+	at org.attoparser.HtmlElement.handleOpenElementEnd(HtmlElement.java:109) ~[attoparser-2.0.5.RELEASE.jar:2.0.5.RELEASE]
+	at org.attoparser.HtmlMarkupHandler.handleOpenElementEnd(HtmlMarkupHandler.java:297) ~[attoparser-2.0.5.RELEASE.jar:2.0.5.RELEASE]
+	at org.attoparser.MarkupEventProcessorHandler.handleOpenElementEnd(MarkupEventProcessorHandler.java:402) ~[attoparser-2.0.5.RELEASE.jar:2.0.5.RELEASE]
+	at org.attoparser.ParsingElementMarkupUtil.parseOpenElement(ParsingElementMarkupUtil.java:159) ~[attoparser-2.0.5.RELEASE.jar:2.0.5.RELEASE]
+	at org.attoparser.MarkupParser.parseBuffer(MarkupParser.java:710) ~[attoparser-2.0.5.RELEASE.jar:2.0.5.RELEASE]
+	at org.attoparser.MarkupParser.parseDocument(MarkupParser.java:301) ~[attoparser-2.0.5.RELEASE.jar:2.0.5.RELEASE]
+	at org.attoparser.MarkupParser.parse(MarkupParser.java:257) ~[attoparser-2.0.5.RELEASE.jar:2.0.5.RELEASE]
+	at org.thymeleaf.templateparser.markup.AbstractMarkupTemplateParser.parse(AbstractMarkupTemplateParser.java:230) ~[thymeleaf-3.0.11.RELEASE.jar:3.0.11.RELEASE]
+	at org.thymeleaf.templateparser.markup.AbstractMarkupTemplateParser.parseStandalone(AbstractMarkupTemplateParser.java:100) ~[thymeleaf-3.0.11.RELEASE.jar:3.0.11.RELEASE]
+	at org.thymeleaf.engine.TemplateManager.parseAndProcess(TemplateManager.java:666) ~[thymeleaf-3.0.11.RELEASE.jar:3.0.11.RELEASE]
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1098) ~[thymeleaf-3.0.11.RELEASE.jar:3.0.11.RELEASE]
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1072) ~[thymeleaf-3.0.11.RELEASE.jar:3.0.11.RELEASE]
+	at org.thymeleaf.spring5.view.ThymeleafView.renderFragment(ThymeleafView.java:362) ~[thymeleaf-spring5-3.0.11.RELEASE.jar:3.0.11.RELEASE]
+	at org.thymeleaf.spring5.view.ThymeleafView.render(ThymeleafView.java:189) ~[thymeleaf-spring5-3.0.11.RELEASE.jar:3.0.11.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.render(DispatcherServlet.java:1373) ~[spring-webmvc-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1118) ~[spring-webmvc-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1057) ~[spring-webmvc-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943) ~[spring-webmvc-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006) ~[spring-webmvc-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:909) ~[spring-webmvc-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:660) ~[tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883) ~[spring-webmvc-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741) ~[tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231) ~[tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) ~[tomcat-embed-websocket-9.0.31.jar:9.0.31]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202) ~[tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:367) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1639) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [na:1.8.0_211]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [na:1.8.0_211]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at java.lang.Thread.run(Thread.java:748) [na:1.8.0_211]
+
+2020-06-02 17:03:55.442  INFO 9940 --- [restartedMain] com.blog.BlogApplication                 : Starting BlogApplication on DESKTOP-TB59BV9 with PID 9940 (D:\IdeaSpace\blog\target\classes started by admin in D:\IdeaSpace\blog)
+2020-06-02 17:03:55.453 DEBUG 9940 --- [restartedMain] com.blog.BlogApplication                 : Running with Spring Boot v2.2.5.RELEASE, Spring v5.2.4.RELEASE
+2020-06-02 17:03:55.453  INFO 9940 --- [restartedMain] com.blog.BlogApplication                 : The following profiles are active: dev
+2020-06-02 17:03:55.640  INFO 9940 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-06-02 17:03:55.641  INFO 9940 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-06-02 17:03:59.575  INFO 9940 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8089 (http)
+2020-06-02 17:03:59.592  INFO 9940 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-06-02 17:03:59.593  INFO 9940 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.31]
+2020-06-02 17:03:59.787  INFO 9940 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-06-02 17:03:59.788  INFO 9940 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 4145 ms
+2020-06-02 17:04:01.166  INFO 9940 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-06-02 17:04:01.332  INFO 9940 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2020-06-02 17:04:01.962  WARN 9940 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : Unable to start LiveReload server
+2020-06-02 17:04:02.050  INFO 9940 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8089 (http) with context path ''
+2020-06-02 17:04:02.056  INFO 9940 --- [restartedMain] com.blog.BlogApplication                 : Started BlogApplication in 7.865 seconds (JVM running for 10.009)
+2020-06-02 17:04:08.050  INFO 9940 --- [http-nio-8089-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-06-02 17:04:08.052  INFO 9940 --- [http-nio-8089-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-06-02 17:04:08.073  INFO 9940 --- [http-nio-8089-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 21 ms
+2020-06-02 17:04:08.162  INFO 9940 --- [http-nio-8089-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-06-02 17:04:08.368  INFO 9940 --- [http-nio-8089-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-06-02 17:04:08.381 DEBUG 9940 --- [http-nio-8089-exec-1] c.b.d.U.queryByUsernameAndPassword       : ==>  Preparing: select * from blog.t_user where username = ? and password = ?; 
+2020-06-02 17:04:08.421 DEBUG 9940 --- [http-nio-8089-exec-1] c.b.d.U.queryByUsernameAndPassword       : ==> Parameters: jack(String), e10adc3949ba59abbe56e057f20f883e(String)
+2020-06-02 17:04:08.452 DEBUG 9940 --- [http-nio-8089-exec-1] c.b.d.U.queryByUsernameAndPassword       : <==      Total: 1

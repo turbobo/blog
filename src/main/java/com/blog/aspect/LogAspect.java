@@ -46,7 +46,6 @@ public class LogAspect {
 
     @AfterReturning(returning = "result", pointcut = "log()")
     public void doAfterReturn(Object result){
-
         //打印返回值
         logger.info("Result: {}", result);
     }
@@ -58,5 +57,14 @@ public class LogAspect {
         private String ip;
         private String classMethod;
         private Object[] args;
+//        public RequestLog(){
+//
+//        }
+//        public RequestLog(String url, String ip,String classMethod,Object[] args){
+//            this.url=url;
+//            this.ip=ip;
+//            this.classMethod=classMethod;
+//            this.args=args;
+//        }
     }
 }
