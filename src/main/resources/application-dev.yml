@@ -21,6 +21,8 @@ logging:  #日志级别
     com.blog: debug
   file: log/blog-dev.log
 
-  #开发环境
-  server:
-    port: 8089
+#  #开发环境
+server:
+  port: 8089
+#  servlet:
+#    context-path: /blog   加上再删掉就可以重新设置端口
