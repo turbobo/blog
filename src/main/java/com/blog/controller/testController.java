@@ -31,8 +31,8 @@ public class testController {
     @RequestMapping("/testAdd")
     //得到ajax的数据，参数写json数据的key值，就能得到value值
     public void login(HttpServletRequest req){
-    String longitude111=req.getParameter("longtitude");
-    System.out.println(longitude111);
+//    String longitude111=req.getParameter("longtitude");
+//    System.out.println(longitude111);
     try {
 //        在服务端进行接收的时候不能直接用参数接受，可以以流的形式来读取json字符串，在用工具类来解析json数据，如下：
         BufferedReader br = new BufferedReader(new InputStreamReader(req.getInputStream()));
