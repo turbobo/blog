@@ -14,7 +14,14 @@
 <!--中间内容-->
 <div  class="m-container m-padded-tb-big animated fadeIn">
     <div class="ui container">
-        <button onclick="test()">test</button>
+        <div class="ui button" onclick="testAdd()">testAdd</div>
+        <br>
+        <br>
+        <br>
+        <div class="ui button" onclick="test2()">test2</div>
+        <br>
+        <br>
+        <br>
 
         <div class="ui stackable grid">
             <!--左边博客列表-->
@@ -231,10 +238,10 @@
         $('.m-item').toggleClass('m-mobile-hide');
     });
 
-    function test() {
-        alert("w12");
+    function testAdd() {
+        // alert("w12");
         $.ajax({
-            contentType: "application/json;charset=UTF-8",
+            // contentType: "application/json;charset=UTF-8",
             url:  "/testController/testAdd",
             type: "POST",
             data: {
@@ -245,6 +252,34 @@
             },
             async: true,
             dataType: "json",
+            success:function (data) {
+                console.log("data ");
+            }
+        })
+    }
+
+    function test2() {
+        // var list={};  //声明为一个对象,这是一个数组对象
+        var list=[];
+        var user1=new Object();
+        user1.id="11111";
+        user1.nickname="jack";
+        list[0]=user1;
+
+        var user2=new Object();
+        user2.id="22222";
+        user2.nickname="jack2222";
+        list[1]=user2;
+        $.ajax({
+            //contentType: "application/json;charset=UTF-8",  //不能加，否则发过去数据乱码
+            url:  "/testController/test2",
+            type: "POST",
+            data: {
+                users: JSON.stringify(list),
+                // "users": list,
+            },
+            async: true,
+            // dataType: "json",
             success:function (data) {
                 console.log("data ");
             }
