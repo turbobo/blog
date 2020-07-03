@@ -238,6 +238,7 @@
 //     <br/>
 //     <br/>
 //     <button style="height:100px;width:150px;" onclick="invokeAPP()">invoke</button>
+//     <button style="height:100px;width:150px;" onclick="uploadVideo()">uploadVideo</button>
 //     </table>
 //     <br/><br/>
 //     </form>
@@ -505,6 +506,26 @@
 //         }
 //     )
 // };
+
+// function uploadVideo(){
+// 	alert("uploadVideo");
+// 	wx.invoke("uploadVideo",{
+// 		localId: '',
+// 		isShowProgressTips: 1,
+// 		},function(res){
+// 			var serverId=res.serverId;  //返回视频的服务器端ID
+// 		}
+// 	);
+	
+// 	wx.invoke("chooseVideo",{
+// 		sourceType:['camera','album'],  //拍摄或相册，默认都有
+// 	},function(res){
+// 		var localIds=typeof res.localIds=='object'?res.localIds:JSON.parse(res.localIds);  //返回视频本地ID
+// 		var thumbnail=res.thumbnail;  //视频缩略图
+// 		}
+// 	);
+// }
+
 //
 // </script>
 //
