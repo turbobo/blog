@@ -32,24 +32,29 @@ public class testController {
     @ResponseBody
     @RequestMapping("/testAdd")
     //得到ajax的数据，参数写json数据的key值，就能得到value值
-    public void testAdd(HttpServletRequest req){
+//    public void testAdd(HttpServletRequest req){
+    public void testAdd(String str){
+
 //    String longitude111=req.getParameter("longtitude");
 //    System.out.println(longitude111);
-        try {
-//        在服务端进行接收的时候不能直接用参数接受，可以以流的形式来读取json字符串，再用工具类来解析json数据，如下：
-            BufferedReader br = new BufferedReader(new InputStreamReader(req.getInputStream()));
-            StringBuffer sb=new StringBuffer();
-            String s=null;
-            while((s=br.readLine())!=null){
-                sb.append(s);
-            }
-            System.out.println("testController.login -----sb类型------"+sb+"    "+sb.getClass().getName().toString());
-            String[] str=sb.toString().split("&");
-            System.out.println("testController.login str-----------"+str);
-            System.out.println("testController.login str-----------"+str[0]);
-        } catch (IOException | JSONException e) {
-            e.printStackTrace();
-        }
+//        try {
+////        在服务端进行接收的时候不能直接用参数接受，可以以流的形式来读取json字符串，再用工具类来解析json数据，如下：
+//            BufferedReader br = new BufferedReader(new InputStreamReader(req.getInputStream()));
+//            StringBuffer sb=new StringBuffer();
+//            String s=null;
+//            while((s=br.readLine())!=null){
+//                sb.append(s);
+//            }
+//            System.out.println("testController.login -----sb类型------"+sb+"    "+sb.getClass().getName().toString());
+//            String[] str=sb.toString().split("&");
+//            System.out.println("testController.login str-----------"+str);
+//            System.out.println("testController.login str-----------"+str[0]);
+//        } catch (IOException | JSONException e) {
+//            e.printStackTrace();
+//        }
+
+        System.out.println("testController.testAdd---------str-------"+str);
+
     }
 
     @ResponseBody

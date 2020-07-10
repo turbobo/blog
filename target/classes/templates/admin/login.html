@@ -37,7 +37,7 @@
            </div>
 
            <div class="ui error mini message"></div>
-           <div class="ui mini negative message" th:text="${msg}">用户名和密码错误</div>
+           <div id="loginErr" class="ui mini negative message" style="display:none" th:text="${msg}" value="${msg}"></div>
 
          </form>
 
@@ -70,6 +70,16 @@
       }
     }
   });
+
+  var loginErr=document.getElementById("loginErr").innerText;
+    if(loginErr=='用户名或密码错误'){
+    $("#loginErr").css("display","block");
+    //   $("#loginErr").style.display="block";
+    }
+  // if(loginErr=='用户名或密码错误')
+  //   alert(loginErr);
+
+
 </script>
 
 </body>
