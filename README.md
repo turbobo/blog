@@ -1,4 +1,4 @@
-blog 个人博客系统（SpringBoot+Mybatis）
+#blog 个人博客系统（SpringBoot+Mybatis）
 
 1.采用SpringBoot、SpringMVC和Mybatis框架开发的个人博客系统；
 
